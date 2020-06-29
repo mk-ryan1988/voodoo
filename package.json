@@ -1,7 +1,7 @@
 {
   "name": "Voodoo",
   "version": "1.0.0",
-  "description": "My stylish Nuxt.js project",
+  "description": "My stylish Nuxt.js playground",
   "author": "Mark",
   "private": true,
   "scripts": {
