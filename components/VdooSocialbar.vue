@@ -1,5 +1,5 @@
 <template>
-<div id="socialBar" class="flex p-1 rounded w-full overflow-hidden md:ml-0 md:mb-0 md:mt-12">
+<div ref="socialBar" class="flex p-1 rounded w-full overflow-hidden md:ml-0 md:mb-0 md:mt-12">
     <VdooAvatar class="md:mr-4" cover rounded />
     <ul class="flex flex-grow items-center justify-evenly text-xs md:justify-start">
     <li class="mx-4">

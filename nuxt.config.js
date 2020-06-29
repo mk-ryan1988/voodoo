@@ -69,6 +69,13 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) {},
+    postcss: {
+      plugins: [
+        require('tailwindcss'),
+        require('postcss-nesting'),
+        require('autoprefixer'),
+      ],
+    }
   }
 };

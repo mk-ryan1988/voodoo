@@ -20,10 +20,10 @@
             </div>
 
         </div>
-        <VdooSocialbar @toggleDark="toggleDark" class="hidden md:flex" />
+        <VdooSocialbar id="socialbar-desktop" @toggleDark="toggleDark" class="hidden md:flex" />
       </div>
       <div id="socialBarContainer" class="fixed bottom-0 z-30 mb-3 px-2 rounded w-full transform transition ease-out duration-100 md:hidden">
-        <VdooSocialbar @toggleDark="toggleDark" />
+        <VdooSocialbar id="socialbar-mobile" @toggleDark="toggleDark" />
       </div>
       <div class="p-8 lg:py-16 lg:pr-10 md:w-1/2 md:pl-0 md:absolute md:top md:right-0">
         <nuxt />

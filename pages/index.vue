@@ -15,11 +15,11 @@
       <section class="mb-16">
         <h2 class="mb-4 text-2xl">What do I like to use?</h2>
         <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); grid-gap: 0.5rem;">
-          <a v-for="item in specialities" :key="item.title" :href="item.url" target="_blank" :class="{'cursor-default' : !item.url.length}">
+          <a v-for="item in specialities" :key="item.title" :href="item.url" rel="noopener" target="_blank" :class="{'cursor-default' : !item.url.length}">
             <VbaseCard :title="item.title">
                 <div class="tech">
                     <VdooAvatar :bgImg="item.logo" :round="item.avatarRound" rounded class="mr-4" />
-                    <span :style="{ color: item.color }">
+                    <span class="text-gray-100">
                         {{ item.title }}
                     </span>
                 </div>
@@ -40,8 +40,9 @@
           </template>
           <template slot="footer">
             <div><span>#vue.js</span> <span>#firebase</span></div>
-            <a href="https://leaner-living.com/fresh-start/about" target="_blank">
+            <a href="https://leaner-living.com/fresh-start/about" rel="noopener" target="_blank">
               <VbaseIcon iconName="external-link" />
+              <span class="sr-only">View external link</span>
             </a>
           </template>
         </VdooCard>
@@ -88,7 +89,7 @@ section {
     @apply flex flex-row items-center p-8 text-lg font-bold text-center uppercase;
 }
 .grid .tech {
-  filter: grayscale(100%);
+  filter: grayscale(70%);
 }
 .grid a {
   &:hover .tech {

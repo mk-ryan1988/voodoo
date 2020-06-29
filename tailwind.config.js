@@ -2,6 +2,14 @@ module.exports = {
   prefix: "",
   important: false,
   separator: ":",
+  // purge: [
+  //   './components/**/*.vue',
+  //   './pages/**/*.vue',
+  // ],
+  purge: {
+    enabled: true,
+    content: ['./components/**/*.vue', './pages/**/*.vue'],
+  },
   theme: {
     screens: {
       sm: "640px",

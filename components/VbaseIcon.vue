@@ -1,5 +1,5 @@
 <template>
-    <div :class="iconColor" v-html="require(`~/assets/icons/${iconName}.svg?raw`)" ref="iconRef"></div>
+    <div :class="iconColor" aria-hidden="true" v-html="require(`~/assets/icons/${iconName}.svg?raw`)" ref="iconRef"></div>
 </template>
 
 <script lang="ts">
