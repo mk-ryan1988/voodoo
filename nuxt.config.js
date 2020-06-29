@@ -16,7 +16,15 @@ export default {
       }
     ],
     link: [
-      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      {
+        rel: "canonical",
+        href: "http://voodoo-developer.co.uk"
+      },
+      {
+        rel: "icon",
+        type: "image/x-icon",
+        href: "/favicon.ico"
+      },
       {
         rel: "stylesheet",
         href:
