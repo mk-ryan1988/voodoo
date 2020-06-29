@@ -1,116 +1,148 @@
 <template>
-  <div class="min-h-screen w-screen flex flex-col md:flex-row">
-    <aside class="w-full pb-10 bg-gray-700 md:pb-0 md:h-screen md:fixed md:w-1/2 z-0 md:z-10">
-      <div class="px-4 flex h-16 w-full">
-        <h1 class="text-white text-4xl font-bold my-auto">Vuedoo</h1>
+    <main class="container">
+      <div class="flex flex-col justify-between p-8 md:fixed md:h-screen md:w-1/2 lg:py-16 lg:pl-16 md:pr-0">
+        <div>
+           <div class="grid mb-12 stack">
+              <div class="z-0 pattern-dots-md" />
+              <h3 class="z-10 p-4 pl-16 text-6xl font-semibold">
+                Hello, I'm <br />
+                Mark Ryan
+              </h3>
+           </div>
+
+            <div class="w-full md:w-3/4 lg:w-8/12">
+              <p class="mb-4">
+                Welcome to my portfolio? Or is it a blog? Maybe a technical playground? Or it could be a diary, magical like Tom Riddle's but less horcrux-y!
+              </p>
+              <p>
+                Anyway take a look around hopefully theres somethings you like and fell free to give me a follow.
+              </p>
+            </div>
+
+        </div>
+        <VdooSocialbar @toggleDark="toggleDark" class="hidden md:flex" />
       </div>
-    </aside>
-    <main class="-mt-10 h-full w-full bg-white md:mt-0 md:border-r-0 md:w-1/2 md:ml-auto z-10 md:z-0">
-      <nav class="px-4 h-16 w-full flex justify-between align-between">
-        <button
-          type="button"
-          id="sidebar-open"
-          class="px-4 text-gray-900 focus:outline-none focus:text-gray-700"
-        >
-          <svg
-            class="fill-current w-4 h-4"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-          >
-            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-          </svg>
-        </button>
-        <ul class="flex items-center">
-          <li
-            v-for="(item, index) in links"
-            :key="'nav-link-' + index"
-            class="px-4"
-          >
-            <nuxt-link class="pb-1 rounded-l rounded-r" :to="item.link">
-              {{ item.label }}
-            </nuxt-link>
-          </li>
-        </ul>
-      </nav>
-      <div class="p-8">
+      <div id="socialBarContainer" class="fixed bottom-0 z-30 mb-3 px-2 rounded w-full transform transition ease-out duration-100 md:hidden">
+        <VdooSocialbar @toggleDark="toggleDark" />
+      </div>
+      <div class="p-8 lg:py-16 lg:pr-10 md:w-1/2 md:pl-0 md:absolute md:top md:right-0">
         <nuxt />
       </div>
     </main>
-  </div>
 </template>
 
 <script>
-import TopBar from "~/components/TopBar.vue";
-import SideBar from "~/components/SideBar.vue";
+import VdooSocialbar from '~/components/VdooSocialbar.vue'
 
 export default {
-  name: "landing",
-  components: { TopBar, SideBar },
+  name: 'landing',
+  components: { VdooSocialbar },
   data() {
     return {
       drawerOpen: false,
-      links: [
-        {label: "Home", link: "/" },
-        {label: "About", link: "/about" }
-      ]
-    };
+    }
   },
-  mouunted() {
+  mounted() {
     this.$nextTick(() => {
-      this.windowWidth = window.innerWidth;
-      window.addEventListener("resize", () => {
-        this.windowWidth = window.innerWidth;
-      });
-    });
+      this.windowWidth = window.innerWidth
+      window.addEventListener('resize', () => {
+        this.windowWidth = window.innerWidth
+      })
+    })
   },
   computed: {
     isTouch: function() {
       if (this.windowWidth <= 960) {
-        return true;
+        return true
       }
-      return false;
-    }
+      return false
+    },
+  },
+  methods: {
+    getLocalDarkMode() {
+      if (process.browser) {
+        const getLocalDarkMode = localStorage.getItem('dark_mode');
+        if (typeof getLocalDarkMode !== 'string') {
+          this.setLocalDarkMode(this.$darkMode);
+        } else {
+          const value = getLocalDarkMode === 'true' ? true : false;
+          this.$darkMode = value;
+          this.setBodyClass();
+        }
+      }
+    },
+    setBodyClass() {
+      let bodyCssClass = 'dark';
+      if (!this.$darkMode) bodyCssClass = 'light';
+      document.body.className = bodyCssClass;
+    },
+    setLocalDarkMode(darkMode) {
+      if (process.browser) {
+        const value = darkMode ? 'true' : 'false';
+        localStorage.setItem('dark_mode', value.toString());
+      }
+    },
+    toggleDark() {
+      this.$darkMode = !this.$darkMode;
+      this.setLocalDarkMode(this.$darkMode);
+      this.setBodyClass();
+    },
+  },
+  created() {
+    this.getLocalDarkMode();
   }
-};
+}
 </script>
 
-<style>
-aside {
-  @media (min-width: theme('screens.md')) {
-    border-top-right-radius: 2.5rem;
-    border-bottom-right-radius: 2.5rem;
+<style lang="postcss">
+html {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+body {
+  @apply h-screen w-screen bg-gray-700 text-white;
+
+  h1,h2,h3,h4,h5,h6 {
+    @apply text-white;
+    font-family: "Space Mono", monospace, -apple-system, BlinkMacSystemFont, sans-serif;
   }
-  background-position: center;
-  background-size: contain;
-  background: url("https://images.unsplash.com/photo-1545557800-d48e509b1c27?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80");
-}
-main {
-  border-top-left-radius: 2.5rem;
-  border-top-right-radius: 2.5rem;
 }
 
-/* Enter and leave animations can use different */
-/* durations and timing functions.              */
-.slide-fade-enter-active {
-  transition: all .3s ease;
+@media (prefers-color-scheme: light) {
+  @apply bg-gray-100 text-gray-900;
+
+  h1,h2,h3,h4,h5,h6 {
+    @apply text-gray-900;
+  }
 }
-.slide-fade-leave-active {
-  transition: all .3s ease-out;
-}
-.slide-fade-enter, .slide-fade-leave-to
-/* .slide-fade-leave-active below version 2.1.8 */ {
-  transform: translateX(-20%);
-  opacity: 0;
+body.light {
+  @apply bg-gray-100 text-gray-900;
+
+  h1,h2,h3,h4,h5,h6 {
+    @apply text-gray-900;
+  }
 }
 
-.component-fade-enter-active, .component-fade-leave-active {
-  transition: opacity .3s ease;
+.pattern-dots-md {
+    @apply overflow-visible text-indigo-700 p-10;
+    max-width: 50% !important;
+    background-image: radial-gradient(currentColor 1px, transparent 1px);
+    background-size: calc(10 * 1px) calc(10 * 1px);
+
+    @screen md {
+      max-width: 20% !important;
+    }
 }
-.component-fade-enter, .component-fade-leave-to
-/* .component-fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
-}
-.nuxt-link-active.nuxt-link-exact-active {
-  @apply border-b-4 border-gray-800;
+
+.grid.stack > * {
+    grid-column: 1;
+    grid-row: 1;
 }
 </style>

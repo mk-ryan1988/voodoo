@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-blue w-screen grid-container">
+  <div class="w-screen min-h-screen bg-blue grid-container">
     <div @click="drawerOpen = !drawerOpen" :class="{'active' : drawerOpen}" class="overlay-scrim"></div>
     <aside :class="{'active' : drawerOpen}"></aside>
     <header>
@@ -13,10 +13,11 @@
 </template>
 
 <script>
-import TopBar from "~/components/TopBar.vue";
-import SideBar from "~/components/SideBar.vue";
+import TopBar from "~/components/navigation/TopBar.vue";
+import SideBar from "~/components/navigation/SideBar.vue";
 
 export default {
+  name: 'Application',
   components: { TopBar, SideBar },
   data () {
     return {
@@ -42,23 +43,6 @@ export default {
 </script>
 
 <style scoped>
-body {
-  @apply bg-white;
-}
-body, html {
-  height: 100vh;
-}
-html {
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
 .grid-container {
   margin: 0;
   display: grid;

@@ -20,7 +20,7 @@ export default {
       {
         rel: "stylesheet",
         href:
-          "https://fonts.googleapis.com/css?family=Roboto+Mono:400,500&display=swap"
+          "https://fonts.googleapis.com/css2?family=Open+Sans&family=Space+Mono:wght@400;700&display=swap"
       }
     ]
   },
@@ -36,6 +36,8 @@ export default {
    ** Plugins to load before mounting the App
    */
   plugins: [
+    // Inject vars into $root
+    "~/plugins/vue-inject.js",
     // Doc: https://github.com/vuejs/composition-api
     "@/plugins/composition-api"],
   /*
@@ -52,7 +54,8 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     "@nuxtjs/axios",
-    "@nuxtjs/pwa"
+    "@nuxtjs/pwa",
+    "@nuxtjs/svg"
   ],
   /*
    ** Axios module configuration

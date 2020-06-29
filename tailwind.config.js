@@ -1,26 +1,3 @@
-// module.exports = {
-//   theme: {
-//     boxShadow: {
-//       default: "2px 2px 4px hsla(0, 0%, 0%, 0.1)"
-//     }
-//     container: {
-//       center: false
-//     },
-//     extend: {
-//       colors: {
-//         blue: {
-//           800: "#002F87"
-//         },
-
-//         gray: {
-//           100: "#f6f7f9"
-//         }
-//       }
-//     }
-//   },
-//   variants: {},
-//   plugins: []
-// };
 module.exports = {
   prefix: "",
   important: false,
@@ -38,17 +15,19 @@ module.exports = {
       black: "#000",
       white: "#fff",
 
+      primary: '#e4405a',
+
       gray: {
-        100: "#EBEEF0",
-        200: "#edf2f7",
-        300: "#e2e8f0",
-        400: "#cbd5e0",
-        500: "#a0aec0",
-        600: "#718096",
-        700: "#4a5568",
-        800: "#2d3748",
-        900: "#1a202c"
-      },
+        100: '#E9E9E9',
+        200: '#C7C7C8',
+        300: '#A6A6A7',
+        400: '#636366',
+        500: '#202024',
+        600: '#1D1D20',
+        700: '#131316',
+        800: '#0E0E10',
+        900: '#0A0A0B',
+        },
       red: {
         100: "#fff5f5",
         200: "#fed7d7",
