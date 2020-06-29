@@ -1,6 +1,6 @@
-# nuxt-playground
+# Voodoo-playground
 
-> My stylish Nuxt.js project
+> My stylish Nuxt.js playground
 
 ## Build Setup
 
