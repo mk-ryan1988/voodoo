@@ -9,7 +9,7 @@
       <VdooPolaroid
         class="-mt-40 mr-24 self-end z-10"
         transform="right"
-        img="https://images.unsplash.com/photo-1591881289894-84b06f017edc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1550&h=1550&q=80"
+        img="/polaroid-snippet.png"
       />
     </div>
       <section class="mb-16">

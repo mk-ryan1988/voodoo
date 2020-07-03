@@ -1,6 +1,10 @@
 <template>
-  <VbaseCard class="w-1/2 p-6 pb-20 rounded-sm shadow-xl polaroid" :class="transform" :flat="flat">
-    <img :src="img" alt="">
+  <VbaseCard
+    :flat="flat"
+    :class="transform"
+    class="w-1/2 p-6 pb-20 rounded-sm shadow-xl polaroid"
+  >
+    <img :src="img" :alt="description">
   </VbaseCard>
 </template>
 
@@ -9,9 +13,10 @@ import VbaseCard from './VbaseCard.vue'
 import { defineComponent, computed, ref } from '@vue/composition-api'
 
 type polaroidProps = {
-  img: string
-  flat: boolean
-  transform: string
+  img: string,
+  flat: boolean,
+  transform: string,
+  description: string,
 };
 
 export default defineComponent({
@@ -33,6 +38,10 @@ export default defineComponent({
       required: false,
       validator: function (value) {
         return ['left', 'right'].indexOf(value) !== -1
+      },
+      description: {
+        type: String,
+        required: false
       }
     },
   },
@@ -51,7 +60,7 @@ export default defineComponent({
   },
 })
 </script>
-<style lang="postcss">
+<style lang="postcss" scoped>
   .polaroid {
     @apply bg-white;
   }
