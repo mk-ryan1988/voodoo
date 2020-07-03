@@ -8,7 +8,7 @@
 import VbaseCard from './VbaseCard.vue'
 import { defineComponent, computed, ref } from '@vue/composition-api'
 
-interface polaroidProps {
+type polaroidProps = {
   img: string
   flat: boolean
   transform: string

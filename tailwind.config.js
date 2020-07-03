@@ -2,12 +2,8 @@ module.exports = {
   prefix: "",
   important: false,
   separator: ":",
-  // purge: [
-  //   './components/**/*.vue',
-  //   './pages/**/*.vue',
-  // ],
   purge: {
-    enabled: true,
+    enabled: false,
     content: ['./components/**/*.vue', './pages/**/*.vue'],
   },
   theme: {
@@ -206,7 +202,9 @@ module.exports = {
       outline: "0 0 0 3px rgba(66, 153, 225, 0.5)",
       none: "none"
     },
-    container: {},
+    container: {
+      center: true,
+    },
     cursor: {
       auto: "auto",
       default: "default",

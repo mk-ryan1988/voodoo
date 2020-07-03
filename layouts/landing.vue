@@ -1,26 +1,7 @@
 <template>
-    <main class="container">
+    <main class="container h-full">
       <div class="flex flex-col justify-between p-8 md:fixed md:h-screen md:w-1/2 lg:py-16 lg:pl-16 md:pr-0">
-        <div>
-           <div class="grid mb-12 stack">
-              <div class="z-0 pattern-dots-md" />
-              <h3 class="z-10 p-4 pl-16 text-6xl font-semibold">
-                Hello, I'm <br />
-                Mark Ryan
-              </h3>
-           </div>
-
-            <div class="w-full md:w-3/4 lg:w-8/12">
-              <p class="mb-4">
-                Welcome to my portfolio? Or is it a blog? Maybe a technical playground? Or it could be a diary, magical like Tom Riddle's but less horcrux-y!
-              </p>
-              <p>
-                Anyway take a look around hopefully theres somethings you like and fell free to give me a follow.
-              </p>
-            </div>
-
-        </div>
-        <VdooSocialbar id="socialbar-desktop" @toggleDark="toggleDark" class="hidden md:flex" />
+        <introSection />
       </div>
       <div id="socialBarContainer" class="fixed bottom-0 z-30 mb-3 px-2 rounded w-full transform transition ease-out duration-100 md:hidden">
         <VdooSocialbar id="socialbar-mobile" @toggleDark="toggleDark" />
@@ -33,10 +14,11 @@
 
 <script>
 import VdooSocialbar from '~/components/VdooSocialbar.vue'
+import IntroSection from '~/components/section/IntoSection.vue'
 
 export default {
   name: 'landing',
-  components: { VdooSocialbar },
+  components: { IntroSection, VdooSocialbar },
   data() {
     return {
       drawerOpen: false,
@@ -144,5 +126,11 @@ body.light {
 .grid.stack > * {
     grid-column: 1;
     grid-row: 1;
+}
+#__nuxt {
+  @apply h-full;
+}
+#__layout {
+  @apply h-full;
 }
 </style>
