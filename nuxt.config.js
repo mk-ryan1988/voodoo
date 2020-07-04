@@ -32,6 +32,20 @@ export default {
       }
     ]
   },
+  pwa: {
+    manifest: {
+      name: 'Voodoo Developer',
+      short_name: 'Voodoo',
+      lang: 'en',
+      icons: [
+        {
+          "src": "data:image/svg+xml,<svg width=%22192%22 height=%22192%22 xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧙‍♂️</text></svg>",
+          "sizes": "192x192",
+          "type": "image/svg"
+        },
+      ],
+    },
+  },
   /*
    ** Customize the progress-bar color
    */

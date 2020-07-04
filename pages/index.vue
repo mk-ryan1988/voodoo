@@ -60,6 +60,14 @@ import VdooAvatar from '~/components/VdooAvatar.vue'
 import VdooPolaroid from '~/components/card/VdooPolaroid.vue';
 
 export default defineComponent({
+  head () {
+    return {
+      title: 'Voodoo - Mark Ryan',
+      meta: [
+        { hid: 'about_me', name: 'about_me', content: 'Voodoo developer. A Short synopsis of me as a developer and a person.' }
+      ]
+    }
+  },
   layout: 'landing' as string,
   transition: {
     name: 'slide-fade',
@@ -72,7 +80,6 @@ export default defineComponent({
     VdooAvatar,
     VdooPolaroid
   },
-
   setup() {
     const polaroidSrc = 'https://images.unsplash.com/photo-1591881289894-84b06f017edc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1550&h=1550&q=80';
     const specialities = technologies

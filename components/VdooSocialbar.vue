@@ -79,7 +79,7 @@ export default defineComponent({
 #socialBarContainer {
   transiton: all ease-in-out 700ms;
 }
-#socialBar {
+#socialbar-mobile {
   @apply bg-gray-900;
 
   @screen md {
@@ -96,7 +96,7 @@ export default defineComponent({
 }
 
 body.light {
-  & #socialBar {
+  & #socialbar-mobile {
     @apply bg-white shadow;
 
     @screen md {
