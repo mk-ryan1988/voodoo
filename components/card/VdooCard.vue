@@ -1,13 +1,13 @@
 <template>
   <VbaseCard class="px-6 py-4" :flat="flat">
-    <div class="flex items-start">
-      <div class="pr-5">
-        <VdooCardHeading>
-          <slot name="heading" />
-        </VdooCardHeading>
+    <div class="flex flex-col items-start">
+         <div class="flex items-center justify-between w-full mb-4">
+          <VdooCardHeading>
+            <slot name="heading" />
+          </VdooCardHeading>
+          <VdooAvatar v-if="hasImg" :bgImg="thumb" class="w-24 lg:w-56"/>
+        </div>
         <slot name="content" />
-      </div>
-      <VdooAvatar v-if="hasImg" :bgImg="thumb" class="w-56"/>
     </div>
     <div class="flex justify-between mt-4">
       <slot name="footer" />

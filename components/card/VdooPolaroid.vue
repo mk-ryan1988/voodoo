@@ -38,12 +38,12 @@ export default defineComponent({
       required: false,
       validator: function (value) {
         return ['left', 'right'].indexOf(value) !== -1
-      },
-      description: {
-        type: String,
-        required: false
       }
     },
+    description: {
+      type: String,
+      required: false
+    }
   },
 
   setup(props: polaroidProps) {

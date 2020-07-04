@@ -1,12 +1,13 @@
 <template>
-    <main class="container h-full">
-      <div class="flex flex-col justify-between p-8 md:fixed md:h-screen md:w-1/2 lg:py-16 lg:pl-16 md:pr-0">
+    <main class="w-full h-full">
+      <div class="flex flex-col justify-between p-8 lg:fixed lg:h-screen lg:w-1/2 lg:pr-0 xl:py-20 xl:pl-40">
         <introSection />
+        <VdooSocialbar id="socialbar-desktop" @toggleDark="toggleDark" class="hidden md:flex" />
       </div>
       <div id="socialBarContainer" class="fixed bottom-0 z-30 mb-3 px-2 rounded w-full transform transition ease-out duration-100 md:hidden">
         <VdooSocialbar id="socialbar-mobile" @toggleDark="toggleDark" />
       </div>
-      <div class="p-8 lg:py-16 lg:pr-10 md:w-1/2 md:pl-0 md:absolute md:top md:right-0">
+      <div class="p-8 lg:w-1/2 lg:pl-0 lg:absolute lg:top lg:right-0 xl:py-20 xl:pr-40">
         <nuxt />
       </div>
     </main>

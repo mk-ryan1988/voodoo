@@ -1,5 +1,5 @@
 <template>
-    <p class="mb-4 text-2xl font-semibold">
+    <p class="text-1xl font-bold lg:text-2xl lg:font-semibold">
         <slot></slot>
     </p>
 </template>
