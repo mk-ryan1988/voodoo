@@ -4,5 +4,42 @@
     --card: #0A0A0B;
 };
 @import 'tailwindcss/base';
+
+html {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+body {
+  @apply h-screen w-screen bg-body text-copy;
+}
+
+section {
+  @apply mb-12;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  @apply text-copy;
+  font-family: "Space Mono", monospace, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+@variants hover, focus {
+  .gs-none {
+    filter: none;
+  }
+  .gs-70 {
+    filter: grayscale(70%);
+  }
+  .gs-100 {
+    filter: grayscale(100%);
+  }
+}

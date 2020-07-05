@@ -66,7 +66,7 @@ export default defineComponent({
 </script>
 <style lang="postcss" scoped>
   .polaroid {
-    @apply bg-white;
+    @apply ;
   }
   .polaroid.left {
     transform: rotate(-12deg);

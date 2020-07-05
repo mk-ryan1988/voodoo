@@ -23,7 +23,7 @@ export default defineComponent({
     const computedStyles = computed(() => {
       let styles = [
         'overflow-hidden',
-        'rounded-sm',
+        'rounded',
         'bg-card'
       ];
       if (!props.flat) styles.push('shadow');

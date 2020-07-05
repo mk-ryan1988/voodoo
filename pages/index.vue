@@ -34,12 +34,12 @@
       </section>
       <section class="mb-0">
         <h2 class="mb-4 text-2xl">What do I like to use?</h2>
-        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); grid-gap: 0.5rem;">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
           <a v-for="item in specialities" :key="item.title" :href="item.url" rel="noopener" target="_blank" :class="{'cursor-default' : !item.url.length}">
             <VbaseCard :title="item.title" flat>
-                <div class="tech">
+                <div class="flex flex-row items-center p-8 text-lg font-bold text-center uppercase gs-70 hover:gs-none focus:gs-none">
                     <VdooAvatar :bgImg="item.logo" :round="item.avatarRound" rounded class="mr-4" />
-                    <span class="text-gray-100">
+                    <span class="hidden md:block text-gray-100">
                         {{ item.title }}
                     </span>
                 </div>
@@ -87,20 +87,3 @@ export default defineComponent({
   },
 })
 </script>
-
-<style lang="postcss">
-section {
-  @apply mb-12;
-}
-.tech {
-    @apply flex flex-row items-center p-8 text-lg font-bold text-center uppercase;
-}
-.grid .tech {
-  filter: grayscale(70%);
-}
-.grid a {
-  &:hover .tech {
-    filter: none;
-  }
-}
-</style>

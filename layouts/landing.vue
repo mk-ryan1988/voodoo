@@ -46,25 +46,6 @@ export default defineComponent({
 </script>
 
 <style lang="postcss">
-html {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
-
-body {
-  @apply h-screen w-screen bg-body text-copy;
-
-  h1,h2,h3,h4,h5,h6 {
-    @apply text-copy;
-    font-family: "Space Mono", monospace, -apple-system, BlinkMacSystemFont, sans-serif;
-  }
-}
 .pattern-dots-md {
     @apply overflow-visible text-indigo-700 p-10;
     max-width: 50% !important;
@@ -79,11 +60,5 @@ body {
 .grid.stack > * {
     grid-column: 1;
     grid-row: 1;
-}
-#__nuxt {
-  @apply h-full;
-}
-#__layout {
-  @apply h-full;
 }
 </style>
