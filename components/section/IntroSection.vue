@@ -2,9 +2,9 @@
     <div>
         <div class="grid mb-12 stack">
             <div class="z-0 pattern-dots-md" />
-            <h3 class="z-10 p-4 pl-16 text-6xl font-semibold">
+            <h3 class="z-10 p-4 pl-16 text-4xl font-bold md:text-6xl md:font-semibold">
             Hey 👋 I'm <br />
-            Mark Ryan
+            Mark Ryan.
             </h3>
         </div>
 
@@ -25,30 +25,6 @@ import VdooSocialbar from '~/components/VdooSocialbar.vue'
 
 export default defineComponent({
   name: 'IntroSection' as string,
-//   props: {
-//     iconName: {
-//       type: String,
-//       required: true
-//     },
-//     iconColor: {
-//       type: String,
-//       default: ''
-//     }
-//   },
-//   setup(props) {
-//     const iconRef = ref(null) as any;
-
-//     onMounted(() => {
-//       iconRef.value.firstChild.classList.add('stroke-current', 'fill-current');
-//     })
-
-//     return {
-//       iconRef
-//     };
-//   },
 });
 </script>
 
-<style>
-
-</style>

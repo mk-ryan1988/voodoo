@@ -13,7 +13,7 @@
       />
     </div>
       <section class="mb-16 mt-8 lg:mt-20 xl:mt-40">
-        <h6 class="mb-4 text-2xl">What have I built?</h6>
+        <h6 class="mb-4 text-xl md:text-2xl">What have I built?</h6>
         <VdooCard thumb="https://leaner-living.com/images/LEANER-LIVING-LOGO.png" flat class="mb-2">
           <template slot="heading">Fresh Start <span class="text-base font-md">with</span> Leaner-Living</template>
           <template slot="content">
@@ -33,13 +33,13 @@
         </VdooCard>
       </section>
       <section class="mb-0">
-        <h2 class="mb-4 text-2xl">What do I like to use?</h2>
+        <h2 class="mb-4 text-xl md:text-2xl">What do I like to use?</h2>
         <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
           <a v-for="item in specialities" :key="item.title" :href="item.url" rel="noopener" target="_blank" :class="{'cursor-default' : !item.url.length}">
             <VbaseCard :title="item.title" flat>
                 <div class="flex flex-row items-center p-8 text-lg font-bold text-center uppercase gs-70 hover:gs-none focus:gs-none">
                     <VdooAvatar :bgImg="item.logo" :round="item.avatarRound" rounded class="mr-4" />
-                    <span class="hidden md:block text-gray-100">
+                    <span class="hidden md:block text-copy">
                         {{ item.title }}
                     </span>
                 </div>

@@ -22,9 +22,10 @@ module.exports = {
       body: 'var(--body)',
       copy: 'var(--copy)',
       card: 'var(--card)',
+      heading: 'var(--heading)',
 
       gray: {
-        100: '#E9E9E9',
+        100: '#f8f8f9',
         200: '#C7C7C8',
         300: '#A6A6A7',
         400: '#636366',

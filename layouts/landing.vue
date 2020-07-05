@@ -1,13 +1,13 @@
 <template>
     <main class="w-full h-full">
-      <div class="flex flex-col justify-between p-8 lg:fixed lg:h-screen lg:w-1/2 lg:pr-0 xl:py-20 xl:pl-40">
-        <introSection />
+      <div class="flex flex-col justify-between p-6 md:p-8 lg:fixed lg:h-screen lg:w-1/2 lg:pr-0 xl:py-20 xl:pl-40">
+        <IntroSection />
         <VdooSocialbar id="socialbar-desktop" @toggleDark="toggleTheme" class="hidden md:flex" />
       </div>
       <div id="socialBarContainer" class="fixed bottom-0 z-30 mb-3 px-2 rounded w-full transform transition ease-out duration-100 md:hidden">
         <VdooSocialbar id="socialbar-mobile" @toggleDark="toggleTheme" class="bg-card shadow-md" />
       </div>
-      <div class="p-8 lg:w-1/2 lg:pl-0 lg:absolute lg:top lg:right-0 xl:py-20 xl:pr-40">
+      <div class="p-6 md:p-8 lg:w-1/2 lg:pl-0 lg:absolute lg:top lg:right-0 xl:py-20 xl:pr-40">
         <nuxt />
       </div>
     </main>
@@ -15,7 +15,7 @@
 
 <script lang="ts">
 import VdooSocialbar from '~/components/VdooSocialbar.vue'
-import IntroSection from '~/components/section/IntoSection.vue'
+import IntroSection from '~/components/section/IntroSection.vue'
 import { defineComponent, reactive, onMounted, ref } from '@vue/composition-api'
 import useTheme from '~/utilities/theme.ts';
 

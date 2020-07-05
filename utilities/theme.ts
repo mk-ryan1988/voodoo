@@ -6,9 +6,10 @@ function hasKey<O>(obj: O, key: keyof any): key is keyof O {
 }
 
 interface ThemeTypes {
-    body: string;
-    copy: string;
-    card: string;
+    body:    string;
+    copy:    string;
+    heading: string,
+    card:    string;
 };
 
 export const useTheme = () => {
@@ -20,14 +21,16 @@ export const useTheme = () => {
   // };
 
   const lightTheme: ThemeTypes = {
-      body: '#E9E9E9',
-      copy: '#0A0A0B',
-      card: "#fff",
+      body:    '#f8f8f9',
+      copy:    '#0E0E10',
+      heading: '#0A0A0B',
+      card:       "#fff",
   };
   const darkTheme: ThemeTypes = {
-      body: '#131316',
-      copy: '#fff',
-      card: '#0A0A0B',
+      body:    '#131316',
+      copy:    '#A6A6A7',
+      heading:    '#fff',
+      card:    '#0A0A0B',
   };
 
   const setCssVariables = (colorMode : string) => {
