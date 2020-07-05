@@ -75,33 +75,3 @@ export default defineComponent({
   }
 });
 </script>
-<style lang="postcss" scoped>
-#socialBarContainer {
-  transiton: all ease-in-out 700ms;
-}
-#socialbar-mobile {
-  @apply bg-gray-900;
-
-  @screen md {
-    @apply bg-gray-700;
-  }
-
-  @media (prefers-color-scheme: light) {
-    @apply bg-white shadow;
-
-    @screen md {
-      @apply bg-gray-100 shadow-none;
-    }
-  }
-}
-
-body.light {
-  & #socialbar-mobile {
-    @apply bg-white shadow;
-
-    @screen md {
-      @apply bg-gray-100 shadow-none;
-    }
-  }
-}
-</style>

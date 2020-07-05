@@ -5,7 +5,7 @@
         <VdooSocialbar id="socialbar-desktop" @toggleDark="toggleTheme" class="hidden md:flex" />
       </div>
       <div id="socialBarContainer" class="fixed bottom-0 z-30 mb-3 px-2 rounded w-full transform transition ease-out duration-100 md:hidden">
-        <VdooSocialbar id="socialbar-mobile" @toggleDark="toggleTheme" />
+        <VdooSocialbar id="socialbar-mobile" @toggleDark="toggleTheme" class="bg-card shadow-md" />
       </div>
       <div class="p-8 lg:w-1/2 lg:pl-0 lg:absolute lg:top lg:right-0 xl:py-20 xl:pr-40">
         <nuxt />

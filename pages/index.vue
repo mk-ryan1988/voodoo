@@ -14,7 +14,7 @@
     </div>
       <section class="mb-16 mt-8 lg:mt-20 xl:mt-40">
         <h6 class="mb-4 text-2xl">What have I built?</h6>
-        <VdooCard thumb="https://leaner-living.com/images/LEANER-LIVING-LOGO.png" class="mb-2">
+        <VdooCard thumb="https://leaner-living.com/images/LEANER-LIVING-LOGO.png" flat class="mb-2">
           <template slot="heading">Fresh Start <span class="text-base font-md">with</span> Leaner-Living</template>
           <template slot="content">
             <p>
@@ -36,7 +36,7 @@
         <h2 class="mb-4 text-2xl">What do I like to use?</h2>
         <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); grid-gap: 0.5rem;">
           <a v-for="item in specialities" :key="item.title" :href="item.url" rel="noopener" target="_blank" :class="{'cursor-default' : !item.url.length}">
-            <VbaseCard :title="item.title">
+            <VbaseCard :title="item.title" flat>
                 <div class="tech">
                     <VdooAvatar :bgImg="item.logo" :round="item.avatarRound" rounded class="mr-4" />
                     <span class="text-gray-100">
