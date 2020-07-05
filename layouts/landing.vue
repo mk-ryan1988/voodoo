@@ -2,10 +2,10 @@
     <main class="w-full h-full">
       <div class="flex flex-col justify-between p-8 lg:fixed lg:h-screen lg:w-1/2 lg:pr-0 xl:py-20 xl:pl-40">
         <introSection />
-        <VdooSocialbar id="socialbar-desktop" @toggleDark="toggleDark" class="hidden md:flex" />
+        <VdooSocialbar id="socialbar-desktop" @toggleDark="toggleTheme" class="hidden md:flex" />
       </div>
       <div id="socialBarContainer" class="fixed bottom-0 z-30 mb-3 px-2 rounded w-full transform transition ease-out duration-100 md:hidden">
-        <VdooSocialbar id="socialbar-mobile" @toggleDark="toggleDark" />
+        <VdooSocialbar id="socialbar-mobile" @toggleDark="toggleTheme" />
       </div>
       <div class="p-8 lg:w-1/2 lg:pl-0 lg:absolute lg:top lg:right-0 xl:py-20 xl:pr-40">
         <nuxt />
@@ -13,68 +13,36 @@
     </main>
 </template>
 
-<script>
+<script lang="ts">
 import VdooSocialbar from '~/components/VdooSocialbar.vue'
 import IntroSection from '~/components/section/IntoSection.vue'
+import { defineComponent, reactive, onMounted, ref } from '@vue/composition-api'
+import useTheme from '~/utilities/theme.ts';
 
-export default {
-  name: 'landing',
-  components: { IntroSection, VdooSocialbar },
-  data() {
+export default defineComponent({
+  name: 'landing' as string,
+  components: {
+    IntroSection,
+    VdooSocialbar,
+  },
+  setup(props, context: any) {
+    const { setCssVariables, setInitialTheme } = useTheme();
+
+    const toggleTheme = (isDarkMode: boolean) => {
+
+      context.root.$darkMode = !context.root.$darkMode;
+      let activeTheme = context.root.$darkMode ? 'dark' : 'light';
+      localStorage.setItem('color_theme', activeTheme);
+      setCssVariables(activeTheme);
+    };
+
+    setInitialTheme();
+
     return {
-      drawerOpen: false,
+      toggleTheme,
     }
-  },
-  mounted() {
-    this.$nextTick(() => {
-      this.windowWidth = window.innerWidth
-      window.addEventListener('resize', () => {
-        this.windowWidth = window.innerWidth
-      })
-    })
-  },
-  computed: {
-    isTouch: function() {
-      if (this.windowWidth <= 960) {
-        return true
-      }
-      return false
-    },
-  },
-  methods: {
-    getLocalDarkMode() {
-      if (process.browser) {
-        const getLocalDarkMode = localStorage.getItem('dark_mode');
-        if (typeof getLocalDarkMode !== 'string') {
-          this.setLocalDarkMode(this.$darkMode);
-        } else {
-          const value = getLocalDarkMode === 'true' ? true : false;
-          this.$darkMode = value;
-          this.setBodyClass();
-        }
-      }
-    },
-    setBodyClass() {
-      let bodyCssClass = 'dark';
-      if (!this.$darkMode) bodyCssClass = 'light';
-      document.body.className = bodyCssClass;
-    },
-    setLocalDarkMode(darkMode) {
-      if (process.browser) {
-        const value = darkMode ? 'true' : 'false';
-        localStorage.setItem('dark_mode', value.toString());
-      }
-    },
-    toggleDark() {
-      this.$darkMode = !this.$darkMode;
-      this.setLocalDarkMode(this.$darkMode);
-      this.setBodyClass();
-    },
-  },
-  created() {
-    this.getLocalDarkMode();
   }
-}
+});
 </script>
 
 <style lang="postcss">
@@ -90,29 +58,13 @@ html {
 }
 
 body {
-  @apply h-screen w-screen bg-gray-700 text-white;
+  @apply h-screen w-screen bg-body text-copy;
 
   h1,h2,h3,h4,h5,h6 {
-    @apply text-white;
+    @apply text-copy;
     font-family: "Space Mono", monospace, -apple-system, BlinkMacSystemFont, sans-serif;
   }
 }
-
-@media (prefers-color-scheme: light) {
-  @apply bg-gray-100 text-gray-900;
-
-  h1,h2,h3,h4,h5,h6 {
-    @apply text-gray-900;
-  }
-}
-body.light {
-  @apply bg-gray-100 text-gray-900;
-
-  h1,h2,h3,h4,h5,h6 {
-    @apply text-gray-900;
-  }
-}
-
 .pattern-dots-md {
     @apply overflow-visible text-indigo-700 p-10;
     max-width: 50% !important;

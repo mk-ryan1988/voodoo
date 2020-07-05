@@ -21,34 +21,19 @@ export default defineComponent({
   },
     setup(props) {
     const computedStyles = computed(() => {
-      let styles = [];
+      let styles = [
+        'overflow-hidden',
+        'rounded-sm',
+        'bg-card'
+      ];
       if (!props.flat) styles.push('shadow');
       if (!props.color) styles.push('vbaseCard');
       if (props.color) styles.push(props.color);
       return styles;
     })
-    // expose to template
     return {
       computedStyles
     }
   },
 });
 </script>
-
-<style lang="postcss">
-.vbaseCard {
-   @apply overflow-hidden rounded-sm bg-gray-900;
-}
-
-body.light {
-  & .vbaseCard {
-    @apply bg-white;
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  .vbaseCard {
-    @apply bg-white;
-  }
-}
-</style>

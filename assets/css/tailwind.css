@@ -1,3 +1,8 @@
+:root {
+    --body: #131316;
+    --copy: #fff;
+    --card: #0A0A0B;
+};
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';

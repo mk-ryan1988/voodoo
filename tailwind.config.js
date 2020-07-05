@@ -19,7 +19,9 @@ module.exports = {
       black: "#000",
       white: "#fff",
 
-      primary: '#e4405a',
+      body: 'var(--body)',
+      copy: 'var(--copy)',
+      card: 'var(--card)',
 
       gray: {
         100: '#E9E9E9',

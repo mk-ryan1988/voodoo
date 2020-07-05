@@ -4,7 +4,11 @@
     :class="transform"
     class="w-1/2 p-6 pb-20 rounded-sm shadow-xl polaroid"
   >
-    <img :src="img" :alt="description">
+    <img
+    :src="img"
+    :alt="description"
+    height="320"
+    width="320">
   </VbaseCard>
 </template>
 
