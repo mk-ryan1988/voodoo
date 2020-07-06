@@ -18,7 +18,7 @@ export default {
     link: [
       {
         rel: "canonical",
-        href: "http://voodoo-developer.co.uk"
+        href: "https://voodoo-developer.co.uk"
       },
       {
         rel: "icon",
