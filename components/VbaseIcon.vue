@@ -22,6 +22,8 @@ export default defineComponent({
 
     onMounted(() => {
       iconRef.value.firstChild.classList.add('stroke-current', 'fill-current');
+      iconRef.value.firstChild.setAttribute('width', '24');
+      iconRef.value.firstChild.setAttribute('height', '24');
     })
 
     return {

@@ -76,8 +76,9 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     "@nuxtjs/axios",
+    '@nuxt/content',
     "@nuxtjs/pwa",
-    "@nuxtjs/svg"
+    "@nuxtjs/svg",
   ],
   /*
    ** Axios module configuration
@@ -98,6 +99,13 @@ export default {
         require('postcss-nesting'),
         require('autoprefixer'),
       ],
+    }
+  },
+  content: {
+    markdown: {
+      prism: {
+        theme: 'prism-themes/themes/prism-material-light.css'
+      }
     }
   }
 };

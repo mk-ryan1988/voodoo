@@ -5,6 +5,7 @@
           <VdooCardHeading>
             <slot name="heading" />
           </VdooCardHeading>
+          <VbaseIcon v-if="icon" :icon-name="icon" />
           <VdooAvatar v-if="hasImg" :bgImg="thumb" class="w-24 lg:w-56"/>
         </div>
         <slot name="content" />
@@ -17,6 +18,7 @@
 
 <script lang="ts">
 import VbaseCard from './VbaseCard.vue'
+import VbaseIcon  from './../VbaseIcon.vue'
 import VdooCardHeading from './VdooCardHeading.vue'
 import VdooAvatar from '~/components/VdooAvatar.vue'
 import { defineComponent, computed, ref } from '@vue/composition-api'
@@ -25,17 +27,22 @@ export default defineComponent({
   name: 'VdooCard' as string,
   components: {
     VbaseCard,
+    VbaseIcon,
     VdooAvatar,
     VdooCardHeading,
   },
   props: {
-    thumb: {
+    icon : {
       type: String,
       required: false,
     },
     flat: {
       type: Boolean,
       default: false,
+    },
+    thumb: {
+      type: String,
+      required: false,
     },
   },
 

@@ -1,6 +1,6 @@
 :root {
     --body: #131316;
-    --copy: #E9E9E9;
+    --copy: #C7C7C8;
     --heading: #fff;
     --card: #0A0A0B;
 };
@@ -28,6 +28,13 @@ section {
 h1,h2,h3,h4,h5,h6 {
   @apply text-heading;
   font-family: "Space Mono", monospace, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+::selection {
+  background: theme('colors.green.500');
+}
+::-moz-selection {
+  background: theme('colors.green.500')
 }
 
 @import 'tailwindcss/components';

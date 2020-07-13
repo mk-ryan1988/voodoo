@@ -12,7 +12,20 @@
         :img="polaroidSrc"
       />
     </div>
-      <section class="mb-16 mt-8 lg:mt-20 xl:mt-40">
+    <section class="mt-8">
+        <h2 class="mb-4 text-xl md:text-2xl">Just some blog posts!</h2>
+          <nuxt-link to="/blog/my-first-blog-post">
+            <VdooCard icon="code" title="blog post" flat >
+              <template slot="heading">My first blog post</template>
+              <template slot="content">
+                <p>
+                  Learning how to use @nuxt/content to create a blog.
+                </p>
+              </template>
+            </VdooCard>
+          </nuxt-link>
+      </section>
+      <section class="mb-16 lg:mt-20 xl:mt-40">
         <h6 class="mb-4 text-xl md:text-2xl">What have I built?</h6>
         <VdooCard thumb="https://leaner-living.com/images/LEANER-LIVING-LOGO.png" flat class="mb-2">
           <template slot="heading">Fresh Start <span class="text-base font-md">with</span> Leaner-Living</template>
