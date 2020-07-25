@@ -51,9 +51,10 @@ export const useTheme = () => {
   const setInitialTheme = () => {
     if (process.browser) {
       const getLocalTheme = localStorage.getItem('color_theme');
-      let theme: string = 'dark';
+      let theme: string = '';
 
       if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) theme = 'dark';
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) theme = 'light';
       if (typeof getLocalTheme === 'string') theme = getLocalTheme;
 
       setCssVariables(theme);
