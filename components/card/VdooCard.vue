@@ -6,7 +6,7 @@
             <slot name="heading" />
           </VdooCardHeading>
           <VbaseIcon v-if="icon" :icon-name="icon" />
-          <VdooAvatar v-if="hasImg" :bgImg="thumb" class="w-24 lg:w-56"/>
+          <VdooAvatar v-if="hasImg" :bgImg="thumb" class="w-24"/>
         </div>
         <slot name="content" />
     </div>

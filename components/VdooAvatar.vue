@@ -1,5 +1,5 @@
 <template>
-<div class="inline-flex w-12 h-12 overflow-hidden" :class="[computedRounding, computedBgSize]" :style="{ backgroundImage: `url(${bgImg})` }">
+<div class="inline-flex w-12 h-12 overflow-hidden bg-no-repeat" :class="[computedRounding, computedBgSize]" :style="{ backgroundImage: `url(${bgImg})` }">
 </div>
 </template>
 
