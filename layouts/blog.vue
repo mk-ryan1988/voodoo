@@ -1,10 +1,10 @@
 <template>
-  <div class="flex flex-row flex-wrap overflow-x-hidden overflow-y-auto w-screen h-screen">
+  <div class="flex flex-col items-center overflow-x-hidden overflow-y-auto w-screen h-screen">
     <VdooNavbar />
-    <main class="flex-grow max-w-full mx-auto px-4 sm:px-6 md:max-w-3xl xl:max-w-4xl xl:px-0">
+    <main class="flex-grow w-full px-4 sm:px-6 md:max-w-3xl xl:max-w-4xl xl:px-0">
       <nuxt/>
     </main>
-    <div class="flex justify-center items-center h-64 w-full bg-card">
+    <div class="flex flex-shrink justify-center items-center h-64 w-full bg-card">
       <div>
         {{footerMsg}}
       </div>

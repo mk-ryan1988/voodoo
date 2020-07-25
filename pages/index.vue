@@ -14,12 +14,12 @@
     </div>
     <section class="mb-16 lg:mt-20 xl:mt-40">
         <h2 class="mb-4 text-lg md:text-xl">Just some code and ramblings!</h2>
-          <nuxt-link to="/blog/this-is-my-second">
-            <VdooCard icon="code" title="blog post" flat >
-              <template slot="heading">My first blog post</template>
+          <nuxt-link v-for="(post, index) in articles" :key="index" :to="'/blog/' + post.slug">
+            <VdooCard flat class="mb-3" >
+              <template slot="heading">{{post.title}}</template>
               <template slot="content">
                 <p>
-                  Learning how to use @nuxt/content to create a blog.
+                  {{post.description}}
                 </p>
               </template>
             </VdooCard>
@@ -48,16 +48,26 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from '@vue/composition-api'
-import { technologies } from '@/utilities/technologies'
+<script>
 import VbaseCard from '~/components/card/VbaseCard.vue'
 import VbaseIcon from '~/components/VbaseIcon.vue'
 import VdooCard from '~/components/card/VdooCard.vue'
 import VdooAvatar from '~/components/VdooAvatar.vue'
 import VdooPolaroid from '~/components/card/VdooPolaroid.vue';
 
-export default defineComponent({
+export default {
+  async asyncData ({ $content, params }) {
+    const articles = await $content('articles')
+      .only(['title', 'slug', 'description'])
+      .sortBy('createdAt', 'desc')
+      .fetch();
+
+      console.log(articles);
+
+    return {
+      articles
+    }
+  },
   head () {
     return {
       title: 'Voodoo - Mark Ryan',
@@ -66,22 +76,22 @@ export default defineComponent({
       ]
     }
   },
-  layout: 'landing' as string,
+  layout: 'landing',
   transition: {
     name: 'slide-fade',
     mode: 'out-in',
   },
   components: {
+    VdooCard,
     VbaseCard,
     VbaseIcon,
-    VdooCard,
     VdooAvatar,
     VdooPolaroid
   },
-  setup() {
-    const polaroidSrc = 'https://images.unsplash.com/photo-1591881289894-84b06f017edc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1550&h=1550&q=80';
-    const specialities = technologies
-    return { polaroidSrc, specialities }
+  data() {
+    return {
+      polaroidSrc: 'https://images.unsplash.com/photo-1591881289894-84b06f017edc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1550&h=1550&q=80'
+    }
   },
-})
+};
 </script>
