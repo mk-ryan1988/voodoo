@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col m-auto">
-      <header class="text-center py-20">
+      <header class="text-center py-12 md:py-20">
         <h1 class="stack text-4xl font-bold mb-2">
             {{ article.title }}
         </h1>
