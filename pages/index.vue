@@ -62,8 +62,6 @@ export default {
       .sortBy('createdAt', 'desc')
       .fetch();
 
-      console.log(articles);
-
     return {
       articles
     }
