@@ -1,7 +1,7 @@
 ---
 title: My first Blog Post
 description: Learning how to use @nuxt/content to create a blog
-date: 21th July 2020
+date: 1st July 2020
 length: 36 min read
 img: first-blog-post.jpg
 alt: my first blog post

@@ -22,14 +22,14 @@ export const useTheme = () => {
 
   const lightTheme: ThemeTypes = {
       body:    '#f8f8f9',
-      copy:    '#0E0E10',
-      heading: '#0A0A0B',
-      card:       "#fff",
+      copy:    '#4a5568',
+      heading: '#000',
+      card:    "#fff",
   };
   const darkTheme: ThemeTypes = {
       body:    '#131316',
       copy:    '#A6A6A7',
-      heading:    '#fff',
+      heading: '#fff',
       card:    '#0A0A0B',
   };
 

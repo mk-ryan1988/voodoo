@@ -1,8 +1,16 @@
 <template>
-<div ref="socialBar" class="flex p-1 rounded w-full overflow-hidden md:ml-0 md:mb-0 md:mt-12">
-    <VdooAvatar class="md:mr-4" cover rounded />
+<div ref="socialBar" :class="{ 'p-1 md:mt-12': !inline }" class="flex rounded w-full overflow-hidden md:ml-0 md:mb-0 ">
+    <!-- <VdooAvatar
+     cover
+     rounded
+     v-if="!inline"
+     class="md:mr-4"
+    /> -->
+    <div v-if="!inline" class="rounded-full text-5xl md:mr-4">
+      🧙‍♂️
+    </div>
     <ul class="flex flex-grow items-center justify-evenly text-xs md:justify-start">
-    <li class="mx-4">
+    <li class="mx-4 text-content hover:text-heading">
         <a href="https://twitter.com/mkryan1988" rel="noopener" target="_blank" class="flex items-center">
             <VbaseIcon iconName="twitter" />
             <div class="hidden md:block">
@@ -10,7 +18,7 @@
             </div>
         </a>
     </li>
-    <li class="mx-4">
+    <li class="mx-4 text-content hover:text-heading">
         <a href="https://github.com/mk-ryan1988" rel="noopener" target="_blank" class="flex items-center"
         >
             <VbaseIcon iconName="git-hub" />
@@ -19,8 +27,7 @@
             </div>
         </a>
     </li>
-    <li class="mx-4">
-       <!-- <VdooSelect /> -->
+    <li class="mx-4 text-content hover:text-heading">
         <a @click="clickSun" rel="noopener" class="flex items-center cursor-pointer"
         >
             <VbaseIcon iconName="sun" />
@@ -43,6 +50,12 @@ export default defineComponent({
     VbaseIcon,
     VdooAvatar,
     VdooSelect
+  },
+  props: {
+    inline: {
+      type: Boolean,
+      default: false,
+    }
   },
   setup(props, { emit }) {
     function clickSun() {

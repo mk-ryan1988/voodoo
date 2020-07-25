@@ -15,22 +15,12 @@
         <nuxt-content :document="article" />
       </article>
 
-      <div class="flex justify-between my-6">
-         <nuxt-link to="/" class="inline-flex">
-          <VbaseIcon iconName="arrow-left" />
-          <h3 class="ml-2 font-semibold">go home</h3>
-         </nuxt-link>
-
-         <nuxt-link to="/" class="inline-flex">
-          <h3 class="mr-2 font-semibold">This is another blog post</h3>
-          <VbaseIcon iconName="arrow-right" />
-         </nuxt-link>
-      </div>
+      <VdooBlogNav :prev="prev" :next="next" />
   </div>
 </template>
 
 <script>
-import VbaseIcon from '~/components/VbaseIcon.vue';
+import VdooBlogNav from '~/components/VdooBlogNav.vue';
 
 export default {
     name: 'Blog',
@@ -39,11 +29,21 @@ export default {
       name: 'slide-fade',
       mode: 'out-in',
     },
-    components: { VbaseIcon },
+    components: { VdooBlogNav },
     async asyncData ({ $content, params }) {
       const article = await $content('articles', params.slug).fetch()
 
-      return { article }
+      const [prev, next] = await $content('articles')
+        .only(['title', 'slug'])
+        .sortBy('createdAt', 'asc')
+        .surround(params.slug)
+        .fetch()
+
+      return {
+        article,
+        prev,
+        next
+      }
     },
     head () {
       return {

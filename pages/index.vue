@@ -12,9 +12,9 @@
         :img="polaroidSrc"
       />
     </div>
-    <section class="mt-8">
-        <h2 class="mb-4 text-xl md:text-2xl">Just some blog posts!</h2>
-          <nuxt-link to="/blog/my-first-blog-post">
+    <section class="mb-16 lg:mt-20 xl:mt-40">
+        <h2 class="mb-4 text-lg md:text-xl">Just some code and ramblings!</h2>
+          <nuxt-link to="/blog/this-is-my-second">
             <VdooCard icon="code" title="blog post" flat >
               <template slot="heading">My first blog post</template>
               <template slot="content">
@@ -25,8 +25,8 @@
             </VdooCard>
           </nuxt-link>
       </section>
-      <section class="mb-16 lg:mt-20 xl:mt-40">
-        <h6 class="mb-4 text-xl md:text-2xl">What have I built?</h6>
+      <section class="mb-0">
+        <h2 class="mb-4 text-lg md:text-xl">What have I built?</h2>
         <VdooCard thumb="https://leaner-living.com/images/LEANER-LIVING-LOGO.png" flat class="mb-2">
           <template slot="heading">Fresh Start <span class="text-base font-md">with</span> Leaner-Living</template>
           <template slot="content">
@@ -45,7 +45,7 @@
           </template>
         </VdooCard>
       </section>
-      <section class="mb-0">
+      <!-- <section class="mb-0">
         <h2 class="mb-4 text-xl md:text-2xl">What do I like to use?</h2>
         <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
           <a v-for="item in specialities" :key="item.title" :href="item.url" rel="noopener" target="_blank" :class="{'cursor-default' : !item.url.length}">
@@ -59,7 +59,7 @@
             </VbaseCard>
           </a>
         </div>
-      </section>
+      </section> -->
   </div>
 </template>
 
