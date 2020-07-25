@@ -1,6 +1,5 @@
 <template>
   <div class="flex flex-row flex-wrap overflow-x-hidden overflow-y-auto w-screen h-screen">
-    <!-- <nav class="h-16 "></nav> -->
     <VdooNavbar />
     <main class="flex-grow max-w-full mx-auto px-4 sm:px-6 md:max-w-3xl xl:max-w-4xl xl:px-0">
       <nuxt/>
@@ -15,7 +14,7 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api';
-import VdooNavbar from '~/components/VdooNavbar.vue';
+import VdooNavbar from '~/components/navigation/VdooNavbar.vue';
 
 export default defineComponent({
   name: 'blog' as string,

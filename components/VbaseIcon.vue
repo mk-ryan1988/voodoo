@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref } from '@vue/composition-api'
+import { defineComponent, onMounted, ref } from '@vue/composition-api';
 
 export default defineComponent({
   name: 'VbaseIcon' as string,

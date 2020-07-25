@@ -20,8 +20,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@vue/composition-api'
-import VdooSocialbar from '~/components/VdooSocialbar.vue'
+import { defineComponent } from '@vue/composition-api';
+import VdooSocialbar from '~/components/navigation/VdooSocialbar.vue';
 
 export default defineComponent({
   name: 'IntroSection' as string,

@@ -17,11 +17,11 @@
 </template>
 
 <script lang="ts">
-import VbaseCard from './VbaseCard.vue'
-import VbaseIcon  from './../VbaseIcon.vue'
-import VdooCardHeading from './VdooCardHeading.vue'
-import VdooAvatar from '~/components/VdooAvatar.vue'
-import { defineComponent, computed, ref } from '@vue/composition-api'
+import VbaseCard from './VbaseCard.vue';
+import VbaseIcon  from './../VbaseIcon.vue';
+import VdooCardHeading from './VdooCardHeading.vue';
+import VdooAvatar from '~/components/VdooAvatar.vue';
+import { defineComponent, computed, ref } from '@vue/composition-api';
 
 export default defineComponent({
   name: 'VdooCard' as string,

@@ -14,10 +14,10 @@
 </template>
 
 <script lang="ts">
-import VdooSocialbar from '~/components/VdooSocialbar.vue'
-import IntroSection from '~/components/section/IntroSection.vue'
-import { defineComponent, reactive, onMounted, ref } from '@vue/composition-api'
 import useTheme from '~/utilities/theme.ts';
+import IntroSection from '~/components/section/IntroSection.vue';
+import VdooSocialbar from '~/components/navigation/VdooSocialbar.vue';
+import { defineComponent, reactive, onMounted, ref } from '@vue/composition-api';
 
 export default defineComponent({
   name: 'landing' as string,

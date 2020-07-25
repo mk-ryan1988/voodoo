@@ -13,8 +13,8 @@
 </template>
 
 <script lang="ts">
-import VbaseCard from './VbaseCard.vue'
-import { defineComponent, computed, ref } from '@vue/composition-api'
+import VbaseCard from './VbaseCard.vue';
+import { defineComponent, computed, ref } from '@vue/composition-api';
 
 type polaroidProps = {
   img: string,

@@ -42,9 +42,3 @@ export default {
 }
 </script>
 
-<style lang="postcss" scoped>
-    div {
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-</style>
