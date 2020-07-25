@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import VdooBlogNav from '~/components/navigation/VdooBlogNav';
+import VdooBlogNav from '~/components/navigation/VdooBlogNav.vue';
 
 export default {
     name: 'Blog',
