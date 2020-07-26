@@ -1,3 +1,3 @@
 declare module 'tailwindcss/resolveConfig' {
-    export function resolveConfig(tailwindConfig: any): any;
+    export function resolveConfig(): any;
 }

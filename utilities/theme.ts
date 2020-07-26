@@ -1,5 +1,5 @@
-// import resolveConfig from 'tailwindcss/resolveConfig'
-// import tailwindConfig from '~/tailwind.config.js'
+import tailwindConfig from '~/tailwind.config.js';
+import resolveConfig from 'tailwindcss/resolveConfig';
 
 function hasKey<O>(obj: O, key: keyof any): key is keyof O {
   return key in obj;
@@ -13,24 +13,21 @@ interface ThemeTypes {
 };
 
 export const useTheme = () => {
-  // const fullConfig = resolveConfig(tailwindConfig)
-  // const lightTheme: themeTypes = {
-  //     body: fullConfig.theme.colors.gray['100'],
-  //     copy: fullConfig.theme.colors.gray['900'],
-  //     card: fullConfig.theme.colors.white,
-  // };
+  const {theme} = resolveConfig(tailwindConfig);
+  const {colors, boxShadow} = theme;
 
   const lightTheme: ThemeTypes = {
-      body:    '#f8f8f9',
-      copy:    '#4a5568',
-      heading: '#000',
-      card:    "#fff",
+      body:    colors.gray['100'],
+      copy:    colors.gray['500'],
+      heading: colors.black,
+      card:    colors.white,
   };
+
   const darkTheme: ThemeTypes = {
-      body:    '#131316',
-      copy:    '#A6A6A7',
-      heading: '#fff',
-      card:    '#0A0A0B',
+      body:    colors.gray['700'],
+      copy:    colors.gray['300'],
+      heading: colors.white,
+      card:    colors.gray['900'],
   };
 
   const setCssVariables = (colorMode : string) => {

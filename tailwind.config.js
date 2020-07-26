@@ -16,13 +16,13 @@ module.exports = {
     colors: {
       transparent: "transparent",
 
-      black: "#000",
-      white: "#fff",
-
       body: 'var(--body)',
       copy: 'var(--copy)',
       card: 'var(--card)',
       heading: 'var(--heading)',
+
+      black: "#000",
+      white: "#fff",
 
       gray: {
         100: '#f8f8f9',
