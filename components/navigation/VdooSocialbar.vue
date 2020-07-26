@@ -1,7 +1,10 @@
 <template>
 <div ref="socialBar" :class="{ 'px-2 py-1 md:mt-12': !inline }" class="flex rounded w-full overflow-hidden md:ml-0 md:mb-0 ">
     <div v-if="!inline" class="rounded-full text-3xl md:text-5xl md:mr-4">
-      🧙‍♂️
+      <span v-if="$nuxt.$route.path === '/'"> 🧙‍♂️</span>
+      <nuxt-link v-else to="/" class="inline-flex items-center">
+         <span> 🏡</span>
+      </nuxt-link>
     </div>
     <ul class="flex flex-grow items-center justify-evenly text-xs md:justify-start">
     <li class="mx-4 text-content hover:text-heading">
@@ -22,7 +25,7 @@
         </a>
     </li>
     <li class="mx-4 text-content hover:text-heading">
-        <a @click="clickSun" rel="noopener" class="flex items-center cursor-pointer"
+        <a @click="toggleTheme" rel="noopener" class="flex items-center cursor-pointer"
         >
             <VbaseIcon iconName="sun" />
             <span class="mx-3 font-semibold hidden md:block">Dark Mode</span>
@@ -33,6 +36,7 @@
 </template>
 
 <script lang="ts">
+import useTheme from '~/utilities/theme.ts';
 import VbaseIcon from '~/components/VbaseIcon.vue';
 import VdooAvatar from '~/components/VdooAvatar.vue';
 import { defineComponent, reactive, onMounted, ref } from '@vue/composition-api';
@@ -49,10 +53,15 @@ export default defineComponent({
       default: false,
     }
   },
-  setup(props, { emit }) {
-    function clickSun() {
-      emit('toggleDark');
-    }
+  setup(props, context: any) {
+    const { setCssVariables, setInitialTheme } = useTheme();
+
+    const toggleTheme = (isDarkMode: boolean) => {
+      context.root.$darkMode = !context.root.$darkMode;
+      let activeTheme = context.root.$darkMode ? 'dark' : 'light';
+      localStorage.setItem('color_theme', activeTheme);
+      setCssVariables(activeTheme);
+    };
 
     const prevScrollpos = ref(0)
 
@@ -63,10 +72,10 @@ export default defineComponent({
         let socialBarContainer =  document.getElementById('socialBarContainer');
         if (socialBarContainer) {
           if (prevScrollpos < currentScrollPos) {
-            socialBarContainer.classList.remove('mb-3');
+            socialBarContainer.classList.remove('my-3');
             socialBarContainer.classList.add('translate-y-full');
             } else {
-            socialBarContainer.classList.add('mb-3');
+            socialBarContainer.classList.add('my-3');
             socialBarContainer.classList.remove('translate-y-full');
           }
         }
@@ -75,7 +84,7 @@ export default defineComponent({
     })
 
     return {
-      clickSun
+      toggleTheme
     }
   }
 });

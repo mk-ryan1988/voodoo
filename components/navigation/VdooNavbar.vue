@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="hidden sm:ml-6 sm:block">
-            <VdooSocialbar @toggleDark="toggleTheme" :inline="true" />
+            <VdooSocialbar id="socialbar-desktop" :inline="true" />
         </div>
       </div>
     </div>
@@ -18,7 +18,6 @@
 </template>
 
 <script lang="ts">
-import useTheme from '~/utilities/theme.ts';
 import VbaseIcon from '~/components/VbaseIcon.vue';
 import VdooDropdown from '~/components/VdooDropdown.vue';
 import VdooSocialbar from '~/components/navigation/VdooSocialbar.vue';
@@ -31,18 +30,7 @@ export default defineComponent({
     VdooDropdown,
     VdooSocialbar
   },
-  setup(props, context: any) {
-    const { setCssVariables, setInitialTheme } = useTheme();
-    const toggleTheme = (isDarkMode: boolean) => {
-
-      context.root.$darkMode = !context.root.$darkMode;
-      let activeTheme = context.root.$darkMode ? 'dark' : 'light';
-      localStorage.setItem('color_theme', activeTheme);
-      setCssVariables(activeTheme);
-    };
-
-    setInitialTheme();
-
+  setup() {
     const routes = [
       {
         name: 'Blog Posts',
@@ -56,7 +44,6 @@ export default defineComponent({
 
     return {
       routes,
-      toggleTheme,
     }
   }
 });

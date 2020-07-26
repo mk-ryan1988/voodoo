@@ -3,7 +3,7 @@
     <NuxtLink
       v-if="prev"
       :to="{ name: 'blog-slug', params: { slug: prev.slug } }"
-      class="inline-flex font-bold hover:text-heading hover:underline"
+      class="inline-flex text-sm md:text-base font-bold hover:text-heading hover:underline"
     >
       <VbaseIcon iconName="arrow-left" class="mr-2" />
       {{ prev.title }}
@@ -12,7 +12,7 @@
     <NuxtLink
       v-if="next"
       :to="{ name: 'blog-slug', params: { slug: next.slug } }"
-      class="inline-flex font-bold hover:text-heading hover:underline"
+      class="inline-flex text-sm md:text-base font-bold hover:text-heading hover:underline"
     >
       {{ next.title }}
       <VbaseIcon iconName="arrow-right" class="ml-2" />
