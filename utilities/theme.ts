@@ -1,5 +1,4 @@
 import tailwindConfig from '~/tailwind.config.js';
-import resolveConfig from 'tailwindcss/resolveConfig';
 
 function hasKey<O>(obj: O, key: keyof any): key is keyof O {
   return key in obj;
@@ -13,8 +12,9 @@ interface ThemeTypes {
 };
 
 export const useTheme = () => {
-  const {theme} = resolveConfig(tailwindConfig);
-  const {colors, boxShadow} = theme;
+  const {theme} = tailwindConfig;
+
+  const {colors} = theme;
 
   const lightTheme: ThemeTypes = {
       body:    colors.gray['100'],
