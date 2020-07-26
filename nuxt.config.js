@@ -43,6 +43,11 @@ export default {
           "sizes": "192x192",
           "type": "image/png"
         },
+        {
+          "src": "/man-mage-512.png",
+          "sizes": "512x512",
+          "type": "image/png"
+        },
       ],
     },
   },
