@@ -14,7 +14,7 @@
     </div>
     <section class="mb-16 lg:mt-20 xl:mt-40">
         <h2 class="mb-4 text-lg md:text-xl">Just some code and ramblings!</h2>
-          <nuxt-link v-for="(post, index) in articles" :key="index" :to="'/blog/' + post.slug">
+          <nuxt-link v-for="post in articles" :key="post.slug" :to="'/blog/' + post.slug">
             <VdooCard flat class="mb-3" >
               <template slot="heading">{{post.title}}</template>
               <template slot="content">
@@ -49,10 +49,10 @@
 </template>
 
 <script>
-import VbaseCard from '~/components/card/VbaseCard.vue'
 import VbaseIcon from '~/components/VbaseIcon.vue'
-import VdooCard from '~/components/card/VdooCard.vue'
 import VdooAvatar from '~/components/VdooAvatar.vue'
+import VdooCard from '~/components/card/VdooCard.vue'
+import VbaseCard from '~/components/card/VbaseCard.vue'
 import VdooPolaroid from '~/components/card/VdooPolaroid.vue';
 
 export default {
