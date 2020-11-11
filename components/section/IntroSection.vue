@@ -1,8 +1,8 @@
 <template>
-    <div>
+    <div class="relative z-0 px-8">
         <div class="grid mb-12 stack">
-            <div class="z-0 pattern-dots-md" />
-            <h3 class="z-10 p-4 pl-16 text-4xl font-bold md:text-6xl md:font-semibold">
+            <!-- pattern-dots-md -->
+            <h3 class="py-4 text-4xl font-bold md:text-6xl md:font-semibold">
             Hey 👋 I'm <br />
             Mark Ryan.
             </h3>

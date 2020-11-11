@@ -24,10 +24,10 @@ export const useTheme = () => {
   };
 
   const darkTheme: ThemeTypes = {
-      body:    colors.gray['700'],
+      body:    colors.gray['900'],
       copy:    colors.gray['300'],
       heading: colors.white,
-      card:    colors.gray['900'],
+      card:    colors.gray['700'],
   };
 
   const setCssVariables = (colorMode : string) => {

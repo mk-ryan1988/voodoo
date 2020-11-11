@@ -1,21 +1,22 @@
 <template>
-  <div class="flex flex-col m-auto">
-    <div class="hidden lg:flex flex-col">
-      <VdooPolaroid
-        class="z-20"
-        transform="left"
-        :img="polaroidSrc"
-      />
-      <VdooPolaroid
-        class="-mt-40 mr-24 self-end z-10"
-        transform="right"
-        :img="polaroidSrc"
-      />
-    </div>
-    <section class="mb-16 lg:mt-20 xl:mt-40">
-        <h2 class="mb-4 text-lg md:text-xl">Just some code and ramblings!</h2>
-          <nuxt-link v-for="post in articles" :key="post.slug" :to="'/blog/' + post.slug">
-            <VdooCard flat class="mb-3" >
+  <div class="flex flex-col m-auto relative lg:flex-row lg:h-screen lg:overflow-auto">
+    <header class="h-64 bg-gray-900 lg:h-screen lg:fixed lg:left-0 lg:w-5/12">
+      <img
+        class="h-full w-full lg:h-screen"
+        alt="man in forest"
+        src="https://cdn.dribbble.com/users/1188871/screenshots/14535412/media/4b65bec20825e9e158bb6daec7f8595e.jpg"
+      >
+    </header>
+    <main class="lg:h-screen lg:absolute lg:right-0 lg:w-7/12 lg:pl-16 lg:pr-16">
+      <section class="mt-16">
+        <div class="diagonal relative py-10 -mt-6">
+          <IntroSection />
+        </div>
+      </section>
+      <section class="mb-16 px-8">
+        <h2 class="mb-4 text-lg md:text-xl">Code and ramblings!</h2>
+          <nuxt-link v-for="post in articles" :key="post.slug" :to="'/blog/' + post.slug" >
+            <VdooCard flat class="mb-3 transform hover:-translate-y-1 hover:scale-105 transition ease-in-out duration-300" >
               <template slot="heading">{{post.title}}</template>
               <template slot="content">
                 <p>
@@ -25,7 +26,7 @@
             </VdooCard>
           </nuxt-link>
       </section>
-      <section class="mb-0">
+      <section class="mb-8 px-8">
         <h2 class="mb-4 text-lg md:text-xl">What have I built?</h2>
         <VdooCard thumb="https://leaner-living.com/images/LEANER-LIVING-LOGO.png" flat class="mb-2">
           <template slot="heading">Fresh Start <span class="text-base font-md">with</span> Leaner-Living</template>
@@ -45,6 +46,7 @@
           </template>
         </VdooCard>
       </section>
+    </main>
   </div>
 </template>
 
@@ -54,8 +56,19 @@ import VdooAvatar from '~/components/VdooAvatar.vue'
 import VdooCard from '~/components/card/VdooCard.vue'
 import VbaseCard from '~/components/card/VbaseCard.vue'
 import VdooPolaroid from '~/components/card/VdooPolaroid.vue';
+import IntroSection from '~/components/section/IntroSection.vue'
+import VdooSocialbar from '~/components/navigation/VdooSocialbar.vue';
 
 export default {
+  name: 'VdooSocialbar',
+  layout: 'home',
+  components: {
+    VdooCard,
+    VbaseIcon,
+    VdooAvatar,
+    IntroSection,
+    VdooSocialbar
+  },
   async asyncData ({ $content, params }) {
     const articles = await $content('articles')
       .only(['title', 'slug', 'description'])
@@ -74,22 +87,21 @@ export default {
       ]
     }
   },
-  layout: 'landing',
-  transition: {
-    name: 'slide-fade',
-    mode: 'out-in',
-  },
-  components: {
-    VdooCard,
-    VbaseCard,
-    VbaseIcon,
-    VdooAvatar,
-    VdooPolaroid
-  },
-  data() {
-    return {
-      polaroidSrc: 'https://images.unsplash.com/photo-1591881289894-84b06f017edc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1550&h=1550&q=80'
-    }
-  },
 };
 </script>
+
+<style lang="postcss" scoped>
+  .diagonal::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    transform: skewY(3deg);
+    transform-origin: 50% 0;
+    outline: 1px solid transparent;
+    backface-visibility: hidden;
+    background-color: var(--body);
+  }
+</style>

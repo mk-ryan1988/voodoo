@@ -1,16 +1,10 @@
 <template>
-    <main class="w-full h-full">
-      <div class="flex flex-col justify-between p-6 md:p-8 lg:fixed lg:h-screen lg:w-1/2 lg:pr-0 xl:py-20 xl:pl-40">
-        <IntroSection />
-        <VdooSocialbar id="socialbar-desktop" class="hidden md:flex" />
-      </div>
-      <div id="socialBarContainer" class="fixed bottom-0 z-30 my-3 px-2 rounded w-full transform transition ease-out duration-100 md:hidden">
-        <VdooSocialbar id="socialbar-mobile" class="bg-card shadow-2xl" />
-      </div>
-      <div class="p-6 md:p-8 lg:w-1/2 lg:pl-0 lg:absolute lg:top lg:right-0 xl:py-20 xl:pr-40">
+    <div class="min-w-screen min-h-screen">
         <nuxt />
-      </div>
-    </main>
+        <div id="socialBarContainer" class="fixed bottom-0 z-30 my-3 px-2 rounded w-full transform transition ease-out duration-100 md:hidden">
+          <VdooSocialbar id="socialbar-mobile" class="bg-card shadow-2xl" />
+        </div>
+    </div>
 </template>
 
 <script lang="ts">
@@ -20,7 +14,7 @@ import VdooSocialbar from '~/components/navigation/VdooSocialbar.vue';
 import { defineComponent, reactive, onMounted, ref } from '@vue/composition-api';
 
 export default defineComponent({
-  name: 'landing' as string,
+  name: 'home' as string,
   components: {
     IntroSection,
     VdooSocialbar,

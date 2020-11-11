@@ -1,9 +1,8 @@
 <template>
 <div ref="socialBar" :class="{ 'px-2 py-1 md:mt-12': !inline }" class="flex rounded w-full overflow-hidden md:ml-0 md:mb-0 ">
     <div v-if="!inline" class="rounded-full text-3xl md:text-5xl md:mr-4">
-      <span v-if="$nuxt.$route.path === '/'"> 🧙‍♂️</span>
-      <nuxt-link v-else to="/" class="inline-flex items-center">
-         <span> 🏡</span>
+      <nuxt-link to="/" class="inline-flex items-center">
+         <span>🧙‍♂️</span>
       </nuxt-link>
     </div>
     <ul class="flex flex-grow items-center justify-evenly text-xs md:justify-start">
