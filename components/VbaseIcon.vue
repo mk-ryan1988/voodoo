@@ -15,15 +15,23 @@ export default defineComponent({
     iconColor: {
       type: String,
       default: ''
-    }
+    },
+    width: {
+      type: String,
+      default: '24'
+    },
+    height: {
+      type: String,
+      default: '24'
+    },
   },
   setup(props) {
     const iconRef = ref(null) as any;
 
     onMounted(() => {
       iconRef.value.firstChild.classList.add('stroke-current', 'fill-current');
-      iconRef.value.firstChild.setAttribute('width', '24');
-      iconRef.value.firstChild.setAttribute('height', '24');
+      iconRef.value.firstChild.setAttribute('width', props.width);
+      iconRef.value.firstChild.setAttribute('height', props.height);
     })
 
     return {

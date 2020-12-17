@@ -1,20 +1,14 @@
 <template>
-  <div class="flex flex-col m-auto relative lg:flex-row lg:h-screen lg:overflow-auto">
-    <header class="h-64 bg-gray-900 lg:h-screen lg:fixed lg:left-0 lg:w-5/12">
-      <img
-        class="h-full w-full lg:h-screen"
-        alt="man in forest"
-        src="https://cdn.dribbble.com/users/1188871/screenshots/14535412/media/4b65bec20825e9e158bb6daec7f8595e.jpg"
-      >
+  <div class="flex flex-col m-auto relative lg:flex-row lg:h-screen lg:overflow-auto bg-body">
+    <header class="flex items-center shadow-2xl rounded-b-lg lg:text-center lg:rounded-r-lg lg:fixed lg:left-0 lg:w-5/12 ">
+      <IntroSection />
     </header>
-    <main class="lg:h-screen lg:absolute lg:right-0 lg:w-7/12 lg:pl-16 lg:pr-16">
-      <section class="mt-16">
-        <div class="diagonal relative py-10 -mt-6">
-          <IntroSection />
-        </div>
-      </section>
+    <main class="lg:absolute lg:right-0 lg:w-7/12 lg:pl-16 lg:pr-16 mt-10">
       <section class="mb-16 px-8">
-        <h2 class="mb-4 text-lg md:text-xl">Code and ramblings!</h2>
+        <div class="flex justify-between items-center">
+          <h2 class="mb-4 text-lg md:text-xl">Code and ramblings!</h2>
+          <!-- <a href="">See All</a> -->
+        </div>
           <nuxt-link v-for="post in articles" :key="post.slug" :to="'/blog/' + post.slug" >
             <VdooCard flat class="mb-3 transform hover:-translate-y-1 hover:scale-105 transition ease-in-out duration-300" >
               <template slot="heading">{{post.title}}</template>
@@ -46,6 +40,9 @@
           </template>
         </VdooCard>
       </section>
+      <div id="socialBarContainer" class="fixed bottom-0 z-30 my-3 px-2 rounded w-full transform transition ease-out duration-100 md:relative md:px-8">
+        <VdooSocialbar id="socialbar-mobile" />
+      </div>
     </main>
   </div>
 </template>
@@ -60,7 +57,7 @@ import IntroSection from '~/components/section/IntroSection.vue'
 import VdooSocialbar from '~/components/navigation/VdooSocialbar.vue';
 
 export default {
-  name: 'VdooSocialbar',
+  name: 'IndexView',
   layout: 'home',
   components: {
     VdooCard,
@@ -91,6 +88,16 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+  header {
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+
+    @media (min-width: 1024px) {
+        height: calc(100vh - 5rem);
+        top: 2.5rem;
+    }
+  }
+
   .diagonal::before {
     content: "";
     position: absolute;
@@ -103,5 +110,8 @@ export default {
     outline: 1px solid transparent;
     backface-visibility: hidden;
     background-color: var(--body);
+  }
+  header {
+
   }
 </style>

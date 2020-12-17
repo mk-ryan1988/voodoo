@@ -2,13 +2,13 @@
     <div class="relative z-0 px-8">
         <div class="grid mb-12 stack">
             <!-- pattern-dots-md -->
-            <h3 class="py-4 text-4xl font-bold md:text-6xl md:font-semibold">
+            <h3 class="py-4 text-4xl font-xbold md:text-6xl md:font-semibold">
             Hey 👋 I'm <br />
             Mark Ryan.
             </h3>
         </div>
 
-        <div class="w-full md:w-4/5 xl:w-8/12">
+        <div class="w-full text-white mb-8 md:mb-0 md:text-center">
             <p class="mb-4">
             Welcome to my portfolio? Or is it a blog? Maybe a technical playground? Or it could be a diary, magical like Tom Riddle's but less horcrux-y!
             </p>
@@ -21,7 +21,6 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api';
-import VdooSocialbar from '~/components/navigation/VdooSocialbar.vue';
 
 export default defineComponent({
   name: 'IntroSection' as string,

@@ -1,37 +1,32 @@
 <template>
-<div ref="socialBar" :class="{ 'px-2 py-1 md:mt-12': !inline }" class="flex rounded w-full overflow-hidden md:ml-0 md:mb-0 ">
-    <div v-if="!inline" class="rounded-full text-3xl md:text-5xl md:mr-4">
-      <nuxt-link to="/" class="inline-flex items-center">
-         <span>🧙‍♂️</span>
-      </nuxt-link>
-    </div>
-    <ul class="flex flex-grow items-center justify-evenly text-xs md:justify-start">
-    <li class="mx-4 text-content hover:text-heading">
-        <a href="https://twitter.com/mkryan1988" rel="noopener" target="_blank" class="flex items-center">
-            <VbaseIcon iconName="twitter" />
-            <div class="hidden md:block">
-                <span class="mx-3 font-semibold">Twitter</span>
-            </div>
-        </a>
-    </li>
-    <li class="mx-4 text-content hover:text-heading">
-        <a href="https://github.com/mk-ryan1988" rel="noopener" target="_blank" class="flex items-center"
-        >
-            <VbaseIcon iconName="git-hub" />
-            <div class="hidden md:block">
-                <span class="mx-3 font-semibold">GitHub</span>
-            </div>
-        </a>
-    </li>
-    <li class="mx-4 text-content hover:text-heading">
-        <a @click="toggleTheme" rel="noopener" class="flex items-center cursor-pointer"
-        >
-            <VbaseIcon iconName="sun" />
-            <span class="mx-3 font-semibold hidden md:block">Dark Mode</span>
-        </a>
-    </li>
-    </ul>
-</div>
+  <div ref="socialBar" :class="{ 'px-2 py-4 md:mt-12': !inline }" class="flex rounded w-full overflow-hidden md:ml-0 md:mb-0 bg-card shadow-2xl md:shadow-none">
+      <ul class="flex flex-grow items-center justify-evenly text-xs">
+        <li class="mx-4 text-content hover:text-heading">
+            <a href="https://twitter.com/mkryan1988" rel="noopener" target="_blank" class="flex items-center">
+                <VbaseIcon iconName="twitter" />
+                <div class="hidden md:block">
+                    <span class="mx-3 font-semibold">Twitter</span>
+                </div>
+            </a>
+        </li>
+        <li class="mx-4 text-content hover:text-heading">
+            <a href="https://github.com/mk-ryan1988" rel="noopener" target="_blank" class="flex items-center"
+            >
+                <VbaseIcon iconName="git-hub" />
+                <div class="hidden md:block">
+                    <span class="mx-3 font-semibold">GitHub</span>
+                </div>
+            </a>
+        </li>
+        <li class="mx-4 text-content hover:text-heading">
+            <a @click="toggleTheme" rel="noopener" class="flex items-center cursor-pointer"
+            >
+                <VbaseIcon iconName="sun" />
+                <span class="mx-3 font-semibold hidden md:block">Dark Mode</span>
+            </a>
+        </li>
+      </ul>
+  </div>
 </template>
 
 <script lang="ts">

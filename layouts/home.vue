@@ -1,9 +1,9 @@
 <template>
     <div class="min-w-screen min-h-screen">
         <nuxt />
-        <div id="socialBarContainer" class="fixed bottom-0 z-30 my-3 px-2 rounded w-full transform transition ease-out duration-100 md:hidden">
-          <VdooSocialbar id="socialbar-mobile" class="bg-card shadow-2xl" />
-        </div>
+        <!-- <div id="socialBarContainer" class="fixed bottom-0 z-30 my-3 px-2 rounded w-full transform transition ease-out duration-100 md:hidden">
+          <VdooSocialbar id="socialbar-desktop" class="bg-card shadow-2xl" />
+        </div> -->
     </div>
 </template>
 
