@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col m-auto relative lg:flex-row lg:h-screen lg:overflow-auto bg-body">
-    <header class="flex items-center shadow-2xl rounded-b-lg lg:text-center lg:rounded-r-lg lg:fixed lg:left-0 lg:w-5/12 ">
+    <header class="flex items-center shadow-2xl rounded-b-lg mx-3 lg:text-center lg:mx-0 lg:rounded-b-none lg:rounded-r-lg lg:fixed lg:left-0 lg:w-5/12 ">
       <IntroSection />
     </header>
     <main class="lg:absolute lg:right-0 lg:w-7/12 lg:pl-16 lg:pr-16 mt-10">
