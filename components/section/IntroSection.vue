@@ -1,5 +1,5 @@
 <template>
-    <div class="relative z-0 px-24">
+    <div class="relative z-0 px-10 md:pb-10 md:px-24 lg:pb-0">
         <div class="grid mb-12 stack">
             <!-- pattern-dots-md -->
             <h3 class="py-4 text-4xl font-xbold md:text-6xl md:font-semibold text-left">
