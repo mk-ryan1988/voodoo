@@ -2,16 +2,18 @@
   <div class="flex flex-col justify-between m-auto min-h-full">
       <VdooTitle origin="top">
         <div class="flex items-center justify-center">
-          <header class="text-center blur-md rounded p-8 my-8 md:my-12 md:mt-32">
-            <h1 class="stack text-4xl text-white font-bold mb-2">
-                {{ article.title }}
-            </h1>
-            <div class="text-white">
-              {{ article.date }}
-              <span class="text-xs mx-1">•</span>
-              {{ article.length }}
-            </div>
-          </header>
+          <VbaseGlass class="text-center p-8 my-8 md:my-12 md:mt-32">
+            <header>
+              <h1 class="stack text-4xl text-white font-bold mb-2">
+                  {{ article.title }}
+              </h1>
+              <div class="text-white">
+                {{ article.date }}
+                <span class="text-xs mx-1">•</span>
+                {{ article.length }}
+              </div>
+            </header>
+          </VbaseGlass>
         </div>
       </VdooTitle>
 
@@ -28,6 +30,7 @@
 <script>
 import VdooBlogNav from '~/components/navigation/VdooBlogNav.vue';
 import VdooTitle from '~/components/card/VdooTitle.vue'
+import VbaseGlass from '~/components/glass/VbaseGlass.vue';
 
 export default {
     name: 'Blog',
@@ -38,7 +41,8 @@ export default {
     },
     components: {
       VdooBlogNav,
-      VdooTitle
+      VdooTitle,
+      VbaseGlass,
     },
     async asyncData ({ $content, params }) {
       const article = await $content('articles', params.slug).fetch()

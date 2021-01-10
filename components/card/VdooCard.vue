@@ -1,5 +1,5 @@
 <template>
-  <VbaseCard class="px-6 py-4" :flat="flat">
+  <VbaseCard class="px-6 py-4" :class="{'transform hover:-translate-y-1 hover:scale-105 transition-transform ease-in-out duration-300' : grow}" :flat="flat">
     <div class="flex flex-col items-start">
          <div class="flex items-center justify-between w-full mb-4">
           <VdooCardHeading>
@@ -44,6 +44,10 @@ export default defineComponent({
       type: String,
       required: false,
     },
+    grow: {
+      type: Boolean,
+      default: false,
+    }
   },
 
   setup({ thumb }) {

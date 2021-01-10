@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col m-auto relative lg:flex-row lg:h-screen lg:overflow-auto">
-    <header class="flex items-center  mx-3 lg:fixed lg:left-0 lg:w-5/12">
+    <header class="flex items-center mx-3 lg:fixed lg:left-0 lg:mx-0 lg:w-5/12">
       <VdooTitle>
         <IntroSection />
       </VdooTitle>
@@ -12,8 +12,16 @@
           <h2 class="mb-4 text-lg md:text-xl">Code and ramblings!</h2>
           <!-- <a href="">See All</a> -->
         </div>
-          <nuxt-link v-for="post in articles" :key="post.slug" :to="'/blog/' + post.slug" >
-            <VdooCard flat class="mb-3 transform hover:-translate-y-1 hover:scale-105 transition ease-in-out duration-300">
+          <nuxt-link
+            v-for="post in articles"
+            :key="post.slug"
+            :to="'/blog/' + post.slug"
+          >
+            <VdooCard
+              flat
+              grow
+              class="mb-3"
+            >
               <template slot="heading">{{post.title}}</template>
               <template slot="content">
                 <p>
@@ -25,7 +33,11 @@
       </section>
       <section class="mb-8 px-8">
         <h2 class="mb-4 text-lg md:text-xl">What have I built?</h2>
-        <VdooCard thumb="https://leaner-living.com/images/LEANER-LIVING-LOGO.png" flat class="mb-2">
+        <VdooCard
+          thumb="https://leaner-living.com/images/LEANER-LIVING-LOGO.png"
+          flat
+          class="mb-2"
+        >
           <template slot="heading">Fresh Start <span class="text-base font-md">with</span> Leaner-Living</template>
           <template slot="content">
             <p>

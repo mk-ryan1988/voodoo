@@ -1,7 +1,7 @@
 <template>
-  <div ref="socialBar" :class="{ 'px-2 py-4 md:mt-12': !inline }" class="flex rounded w-full overflow-hidden md:ml-0 md:mb-0 shadow-2xl md:shadow-none">
+  <div ref="socialBar" :class="{ 'px-2 py-4 md:mt-12': !inline }" class="flex rounded w-full overflow-hidden md:ml-0 md:mb-0 shadow-2xl md:shadow-none bg-white dark:bg-black lg:bg-transparent lg:dark:bg-transparent">
       <ul class="flex flex-grow items-center justify-evenly text-xs">
-        <li class="mx-4">
+        <li class="mx-4 nav-link">
             <a href="https://twitter.com/mkryan1988" rel="noopener" target="_blank" class="flex items-center">
                 <VbaseIcon iconName="twitter" />
                 <div class="hidden md:block">
@@ -9,7 +9,7 @@
                 </div>
             </a>
         </li>
-        <li class="mx-4">
+        <li class="mx-4 nav-link">
             <a href="https://github.com/mk-ryan1988" rel="noopener" target="_blank" class="flex items-center"
             >
                 <VbaseIcon iconName="git-hub" />
@@ -18,7 +18,7 @@
                 </div>
             </a>
         </li>
-        <li class="mx-4">
+        <li class="mx-4 nav-link">
             <a @click="toggleTheme" rel="noopener" class="flex items-center cursor-pointer"
             >
                 <VbaseIcon iconName="sun" />
@@ -82,3 +82,9 @@ export default defineComponent({
   }
 });
 </script>
+
+<style lang="postcss" scoped>
+  .nav-link {
+    @apply text-gray-700 hover:text-black dark:text-gray-300 dark:hover:text-white;
+  }
+</style>
