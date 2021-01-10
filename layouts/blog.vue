@@ -4,13 +4,13 @@
     <main class="flex-grow w-full px-4 sm:px-6 md:max-w-3xl xl:max-w-4xl xl:px-0">
       <nuxt/>
     </main>
-    <div class="flex justify-center items-center h-32 md:h-64 w-full bg-card">
+    <div class="flex justify-center items-center h-32 md:h-64 w-full bg-">
       <div>
         {{footerMsg}}
       </div>
     </div>
     <div id="socialBarContainer" class="fixed bottom-0 z-30 my-3 px-2 rounded w-full transform transition ease-out duration-100 md:hidden">
-      <VdooSocialbar id="socialbar-mobile" class="bg-card shadow-2xl" />
+      <VdooSocialbar id="socialbar-mobile" class="bg-white dark:bg-black shadow-2xl" />
     </div>
   </div>
 </template>

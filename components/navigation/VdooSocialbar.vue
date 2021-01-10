@@ -1,7 +1,7 @@
 <template>
   <div ref="socialBar" :class="{ 'px-2 py-4 md:mt-12': !inline }" class="flex rounded w-full overflow-hidden md:ml-0 md:mb-0 shadow-2xl md:shadow-none">
       <ul class="flex flex-grow items-center justify-evenly text-xs">
-        <li class="mx-4 text-content hover:text-heading">
+        <li class="mx-4">
             <a href="https://twitter.com/mkryan1988" rel="noopener" target="_blank" class="flex items-center">
                 <VbaseIcon iconName="twitter" />
                 <div class="hidden md:block">
@@ -9,7 +9,7 @@
                 </div>
             </a>
         </li>
-        <li class="mx-4 text-content hover:text-heading">
+        <li class="mx-4">
             <a href="https://github.com/mk-ryan1988" rel="noopener" target="_blank" class="flex items-center"
             >
                 <VbaseIcon iconName="git-hub" />
@@ -18,7 +18,7 @@
                 </div>
             </a>
         </li>
-        <li class="mx-4 text-content hover:text-heading">
+        <li class="mx-4">
             <a @click="toggleTheme" rel="noopener" class="flex items-center cursor-pointer"
             >
                 <VbaseIcon iconName="sun" />
@@ -48,13 +48,12 @@ export default defineComponent({
     }
   },
   setup(props, context: any) {
-    const { setCssVariables, setInitialTheme } = useTheme();
+    const { setInitialTheme, toggleLocalTheme } = useTheme();
 
     const toggleTheme = (isDarkMode: boolean) => {
       context.root.$darkMode = !context.root.$darkMode;
       let activeTheme = context.root.$darkMode ? 'dark' : 'light';
-      localStorage.setItem('color_theme', activeTheme);
-      setCssVariables(activeTheme);
+      toggleLocalTheme(activeTheme);
     };
 
     const prevScrollpos = ref(0)

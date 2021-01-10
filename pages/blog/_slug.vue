@@ -67,11 +67,8 @@ export default {
 </script>
 <style lang="postcss">
   .nuxt-content {
-    & p {
-      @apply text-copy;
-    }
     & pre {
-      @apply rounded bg-card;
+      @apply rounded bg-gray-900;
     }
     & img {
       @apply shadow-lg rounded;

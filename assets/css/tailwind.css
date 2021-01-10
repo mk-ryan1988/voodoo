@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  @apply h-screen w-screen bg-body text-copy;
+  @apply h-screen w-screen bg-gray-100 dark:bg-black text-gray-900 dark:text-gray-300;
 }
 
 section {
@@ -20,36 +20,9 @@ section {
 }
 
 h1,h2,h3,h4,h5,h6 {
-  @apply text-heading;
+  @apply text-black dark:text-white;
   font-family: 'Rubik', sans-serif;
 }
 
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
-
-@variants hover, focus {
-  .gs-none {
-    filter: none;
-  }
-  .gs-70 {
-    filter: grayscale(70%);
-  }
-  .gs-100 {
-    filter: grayscale(100%);
-  }
-  .blur-xs {
-    backdrop-filter: blur(2px);
-  }
-  .blur-sm {
-    backdrop-filter: blur(10px);
-  }
-  .blur-md {
-    backdrop-filter: blur(25px);
-  }
-  .blur-lg {
-    backdrop-filter: blur(50px);
-  }
-  .blur-xl {
-    backdrop-filter: blur(100px);
-  }
-}

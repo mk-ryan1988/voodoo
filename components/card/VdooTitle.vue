@@ -23,18 +23,18 @@ export default {
     computedRadius() {
       switch (this.origin) {
         case 'top':
-          return 'rounded-b-xl rounded-b-xl'
+          return 'rounded-b-3xl rounded-b-3xl'
         case 'left':
-          return 'rounded-r-xl'
+          return 'rounded-r-3xl'
         case 'bottom':
-          return 'rounded-t-xl'
+          return 'rounded-t-3xl'
         case 'right':
-          return 'rounded-l-xl'
+          return 'rounded-l-3xl'
         case 'middle':
-          return 'rounded-xl'
+          return 'rounded-3xl'
           break;
         default:
-          return 'rounded-b-xl rounded-b-xl lg:rounded-b-none lg:rounded-r-xl'
+          return 'rounded-b-3xl rounded-b-3xl lg:rounded-b-none lg:rounded-r-3xl'
       }
     }
   },

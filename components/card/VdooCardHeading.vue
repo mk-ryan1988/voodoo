@@ -1,7 +1,7 @@
 <template>
-    <p class="text-1xl font-bold lg:text-2xl lg:font-semibold">
+    <h6 class="text-1xl font-bold lg:text-2xl lg:font-semibold">
         <slot></slot>
-    </p>
+    </h6>
 </template>
 
 <script lang="ts">

@@ -1,66 +1,36 @@
-import tailwindConfig from '~/tailwind.config.js';
-
-function hasKey<O>(obj: O, key: keyof any): key is keyof O {
-  return key in obj;
-}
-
-interface ThemeTypes {
-    body:    string;
-    copy:    string;
-    heading: string,
-    card:    string;
-};
-
 export const useTheme = () => {
-  const {theme} = tailwindConfig;
-
-  const {colors} = theme;
-
-  const lightTheme: ThemeTypes = {
-      body:    colors.gray['100'],
-      copy:    colors.gray['500'],
-      heading: colors.black,
-      card:    colors.white,
-  };
-
-  const darkTheme: ThemeTypes = {
-      body:    colors.gray['900'],
-      copy:    colors.gray['300'],
-      heading: colors.white,
-      card:    colors.gray['700'],
-  };
-
-  const setCssVariables = (colorMode : string) => {
-    if (process.browser) {
-      let root = document.documentElement;
-      let activeTheme = (colorMode === 'light' ? lightTheme : darkTheme);
-
-      for (let key in activeTheme) {
-        let value = '';
-        if (hasKey(activeTheme, key)) {
-          value = activeTheme[key];
-        }
-        root.style.setProperty('--'+ key, value);
-      };
-    }
-  };
-
+  enum Themes {
+      light = 'light',
+      dark = 'dark',
+  }
   const setInitialTheme = () => {
-    if (process.browser) {
-      const getLocalTheme = localStorage.getItem('color_theme');
-      let theme: string = '';
+    if (process.browser && document) {
+      let body = document.querySelector('html');
 
-      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) theme = 'dark';
-      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) theme = 'light';
-      if (typeof getLocalTheme === 'string') theme = getLocalTheme;
-
-      setCssVariables(theme);
+      if (localStorage.color_theme === 'dark' || (!('color_theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        if (body) {
+          body.classList.add('dark');
+        }
+      } else {
+        if (body) {
+          body.classList.remove('dark');
+        }
+      }
     }
   }
 
+  const toggleLocalTheme = (theme: Themes | String): void => {
+      localStorage.color_theme = theme;
+
+      // Whenever the user explicitly chooses to respect the OS preference
+      // localStorage.removeItem('theme')
+
+      return setInitialTheme();
+  }
+
   return {
-    setCssVariables,
-    setInitialTheme
+    setInitialTheme,
+    toggleLocalTheme
   };
 };
 

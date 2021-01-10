@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col m-auto relative lg:flex-row lg:h-screen lg:overflow-auto bg-body">
+  <div class="flex flex-col m-auto relative lg:flex-row lg:h-screen lg:overflow-auto">
     <header class="flex items-center  mx-3 lg:fixed lg:left-0 lg:w-5/12">
       <VdooTitle>
         <IntroSection />

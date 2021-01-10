@@ -24,7 +24,8 @@ export default defineComponent({
       let styles = [
         'overflow-hidden',
         'rounded',
-        'bg-card'
+        'bg-white',
+        'dark:bg-gray-900',
       ];
       if (!props.flat) styles.push('shadow');
       if (!props.color) styles.push('vbaseCard');
