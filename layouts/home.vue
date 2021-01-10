@@ -9,14 +9,12 @@
 
 <script lang="ts">
 import useTheme from '~/utilities/theme.ts';
-import IntroSection from '~/components/section/IntroSection.vue';
 import VdooSocialbar from '~/components/navigation/VdooSocialbar.vue';
 import { defineComponent, reactive, onMounted, ref } from '@vue/composition-api';
 
 export default defineComponent({
   name: 'home' as string,
   components: {
-    IntroSection,
     VdooSocialbar,
   },
   setup(props) {
