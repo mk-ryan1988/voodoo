@@ -12,6 +12,7 @@ export default {
 
 <style lang="postcss">
   .glass {
-    @apply rounded-md bg-gradient-to-br from-white to-transparent bg-opacity-50 blur-xl;
+    @apply rounded-md blur-md;
+    background: linear-gradient(134.23deg, rgba(255, 255, 255, 0.6) 2.91%, rgba(255, 255, 255, 0.1) 101.26%);
   }
 </style>
