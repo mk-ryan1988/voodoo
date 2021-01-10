@@ -1,9 +1,12 @@
 <template>
   <div class="flex flex-col m-auto relative lg:flex-row lg:h-screen lg:overflow-auto bg-body">
-    <header class="flex items-center shadow-2xl rounded-b-lg mx-3 lg:text-center lg:mx-0 lg:rounded-b-none lg:rounded-r-lg lg:fixed lg:left-0 lg:w-5/12 ">
-      <IntroSection />
+    <header class="flex items-center  mx-3 lg:fixed lg:left-0 lg:w-5/12">
+      <VdooTitle>
+        <IntroSection />
+      </VdooTitle>
     </header>
-    <main class="lg:absolute lg:right-0 lg:w-7/12 lg:pl-32 lg:pr-32 mt-10">
+
+    <main class="lg:absolute lg:right-0 lg:w-7/12 lg:pl-24 lg:pr-32 mt-10">
       <section class="mb-16 px-8">
         <div class="flex justify-between items-center">
           <h2 class="mb-4 text-lg md:text-xl">Code and ramblings!</h2>
@@ -53,8 +56,9 @@ import VdooAvatar from '~/components/VdooAvatar.vue'
 import VdooCard from '~/components/card/VdooCard.vue'
 import VbaseCard from '~/components/card/VbaseCard.vue'
 import VdooPolaroid from '~/components/card/VdooPolaroid.vue';
-import IntroSection from '~/components/section/IntroSection.vue'
+import IntroSection from '~/components/_partials/IntroSection.vue'
 import VdooSocialbar from '~/components/navigation/VdooSocialbar.vue';
+import VdooTitle from '~/components/card/VdooTitle.vue'
 
 export default {
   name: 'IndexView',
@@ -64,7 +68,8 @@ export default {
     VbaseIcon,
     VdooAvatar,
     IntroSection,
-    VdooSocialbar
+    VdooSocialbar,
+    VdooTitle,
   },
   async asyncData ({ $content, params }) {
     const articles = await $content('articles')
@@ -88,16 +93,6 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-  header {
-    background-color: #4158D0;
-    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
-
-    @media (min-width: 1024px) {
-        height: calc(100vh - 5rem);
-        top: 2.5rem;
-    }
-  }
-
   .diagonal::before {
     content: "";
     position: absolute;
@@ -112,6 +107,9 @@ export default {
     background-color: var(--body);
   }
   header {
-
+    @media (min-width: 1024px) {
+        height: calc(100vh - 5rem);
+        top: 2.5rem;
+    }
   }
 </style>

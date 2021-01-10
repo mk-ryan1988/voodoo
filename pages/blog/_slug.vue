@@ -1,21 +1,25 @@
 <template>
   <div class="flex flex-col justify-between m-auto min-h-full">
-      <div>
-        <header class="text-center py-12 md:py-20">
-          <h1 class="stack text-4xl font-bold mb-2">
-              {{ article.title }}
-          </h1>
-          <div>
-            {{ article.date }}
-            <span class="text-xs mx-1">•</span>
-            {{ article.length }}
-          </div>
-        </header>
+      <VdooTitle origin="top">
+        <div class="flex items-center justify-center">
+          <header class="text-center blur-md rounded p-8 my-8 md:my-12 md:mt-32">
+            <h1 class="stack text-4xl text-white font-bold mb-2">
+                {{ article.title }}
+            </h1>
+            <div class="text-white">
+              {{ article.date }}
+              <span class="text-xs mx-1">•</span>
+              {{ article.length }}
+            </div>
+          </header>
+        </div>
+      </VdooTitle>
 
+      <main>
         <article class="min-w-full prose lg:prose-lg">
           <nuxt-content :document="article" />
         </article>
-      </div>
+      </main>
 
       <VdooBlogNav :prev="prev" :next="next" />
   </div>
@@ -23,6 +27,7 @@
 
 <script>
 import VdooBlogNav from '~/components/navigation/VdooBlogNav.vue';
+import VdooTitle from '~/components/card/VdooTitle.vue'
 
 export default {
     name: 'Blog',
@@ -31,7 +36,10 @@ export default {
       name: 'slide-fade',
       mode: 'out-in',
     },
-    components: { VdooBlogNav },
+    components: {
+      VdooBlogNav,
+      VdooTitle
+    },
     async asyncData ({ $content, params }) {
       const article = await $content('articles', params.slug).fetch()
 

@@ -1,7 +1,7 @@
 @import 'tailwindcss/base';
 
 html {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -21,7 +21,7 @@ section {
 
 h1,h2,h3,h4,h5,h6 {
   @apply text-heading;
-  font-family: "Space Mono", monospace, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Rubik', sans-serif;
 }
 
 @import 'tailwindcss/components';
@@ -36,5 +36,20 @@ h1,h2,h3,h4,h5,h6 {
   }
   .gs-100 {
     filter: grayscale(100%);
+  }
+  .blur-xs {
+    backdrop-filter: blur(2px);
+  }
+  .blur-sm {
+    backdrop-filter: blur(10px);
+  }
+  .blur-md {
+    backdrop-filter: blur(25px);
+  }
+  .blur-lg {
+    backdrop-filter: blur(50px);
+  }
+  .blur-xl {
+    backdrop-filter: blur(100px);
   }
 }

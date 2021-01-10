@@ -1,4 +1,30 @@
+// const plugin = require('tailwindcss/plugin');
 module.exports = {
+  // plugins: [
+  //   plugin(function({ addUtilities }) {
+  //     const newUtilities = {
+  //       '.blur-xs': {
+  //         backdropFilter: 'blur(2px)'
+  //       },
+  //       '.blur-sm': {
+  //         backdropFilter: 'blur(10px)'
+  //       },
+  //       '.blur-md': {
+  //         backdropFilter: 'blur(25px)'
+  //       },
+  //       '.blur-lg': {
+  //         backdropFilter: 'blur(50px)'
+  //       },
+  //       '.blur-xl': {
+  //         backdropFilter: 'blur(100px)'
+  //       },
+  //     }
+
+  //     addUtilities(newUtilities, {
+  //       variants: ['responsive', 'hover'],
+  //     });
+  //   })
+  // ],
   prefix: "",
   important: false,
   separator: ":",
@@ -182,6 +208,7 @@ module.exports = {
       sm: "0.125rem",
       default: "0.25rem",
       lg: "0.5rem",
+      xl: '1.5rem',
       full: "9999px"
     },
     borderWidth: {
@@ -235,29 +262,37 @@ module.exports = {
       default: "1"
     },
     fontFamily: {
-      sans: [
-        "-apple-system",
-        "BlinkMacSystemFont",
-        '"Segoe UI"',
-        "Roboto",
-        '"Helvetica Neue"',
-        "Arial",
-        '"Noto Sans"',
-        "sans-serif",
-        '"Apple Color Emoji"',
-        '"Segoe UI Emoji"',
-        '"Segoe UI Symbol"',
-        '"Noto Color Emoji"'
+      'heading': [
+        'Rubik',
+        'sans-serif'
       ],
-      serif: ["Georgia", "Cambria", '"Times New Roman"', "Times", "serif"],
-      mono: [
-        "Menlo",
-        "Monaco",
-        "Consolas",
-        '"Liberation Mono"',
-        '"Courier New"',
-        "monospace"
-      ]
+      'body': [
+        'Poppins',
+        'sans-serif'
+      ],
+      // sans: [
+      //   "-apple-system",
+      //   "BlinkMacSystemFont",
+      //   '"Segoe UI"',
+      //   "Roboto",
+      //   '"Helvetica Neue"',
+      //   "Arial",
+      //   '"Noto Sans"',
+      //   "sans-serif",
+      //   '"Apple Color Emoji"',
+      //   '"Segoe UI Emoji"',
+      //   '"Segoe UI Symbol"',
+      //   '"Noto Color Emoji"'
+      // ],
+      // serif: ["Georgia", "Cambria", '"Times New Roman"', "Times", "serif"],
+      // mono: [
+      //   "Menlo",
+      //   "Monaco",
+      //   "Consolas",
+      //   '"Liberation Mono"',
+      //   '"Courier New"',
+      //   "monospace"
+      // ]
     },
     fontSize: {
       xs: "0.75rem",

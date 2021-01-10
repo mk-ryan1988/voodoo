@@ -1,5 +1,5 @@
 <template>
-  <nav class="container bg-body w-full">
+  <nav class="w-full hidden blur-xl z-50 md:block md:fixed md:top-0">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-center h-16 md:justify-between">
         <div class="flex items-center">
@@ -48,3 +48,8 @@ export default defineComponent({
   }
 });
 </script>
+<style lang="postcss" scoped>
+  nav {
+    background: linear-gradient(135deg, var(--body) 2.91%, rgba(var(--body), 0.2) 101.26%);
+  }
+</style>
