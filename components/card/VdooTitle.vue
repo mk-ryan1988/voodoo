@@ -1,6 +1,6 @@
 <template>
   <div
-    class="vdoo-title w-full h-full shadow-2xl p-8 lg:text-center lg:mx-0"
+    class="vdoo-title w-full h-full shadow-2xl p-8 lg:p-0 lg:text-center lg:mx-0"
     :class="computedRadius"
   >
     <slot />

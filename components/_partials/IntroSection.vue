@@ -1,5 +1,5 @@
 <template>
-    <div class="relative grid stack overflow-hidden w-full h-full px-16 py-8">
+    <div class="relative grid stack overflow-hidden w-full h-full px-4 lg:px-16 lg:py-8">
         <div class="w-full h-full z-20">
             <div class="ma-0 lg:mt-32">
                 <h2 class="text-4xl text-white font-xbold mb-4 md:text-6xl md:font-semibold text-left">
@@ -18,25 +18,11 @@
             </div>
         </div>
         <div class="blur-xs w-full h-full pointer-events-none z-10"></div>
-        <div class="landing-img1 w-full h-full hidden lg:grid justify-items-end items-end pointer-events-none z-20 transform translate-x-40 translate-y-48">
-            <img
-                alt=""
-                :src="require('~/assets/shapes.png')"
-                style="width: 450; height: 450px;"
-            >
-        </div>
-        <div class="landing-img1 w-full h-full hidden lg:grid justify-items-end pointer-events-none transform -rotate-12">
+        <div class="landing-img1 w-full h-full hidden lg:grid justify-items-end items-end pointer-events-none transform -rotate-12">
             <img
                 alt=""
                 :src="require('~/assets/rocket.png')"
-                style="width: 450; height: 450px; margin-right: -176px; margin-top: 30px;"
-            >
-        </div>
-        <div class="landing-img1 w-full h-full hidden lg:grid justify-items-start items-end pointer-events-none ">
-            <img
-                alt=""
-                :src="require('~/assets/play.png')"
-                style="width: 450; height: 450px;"
+                style="width: 600px; height: 600px; margin-right: -50px; margin-bottom: -100px;"
             >
         </div>
     </div>
