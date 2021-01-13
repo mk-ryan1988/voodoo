@@ -1,6 +1,6 @@
 <template>
-  <div ref="socialBar" :class="{ 'px-2 py-4 md:mt-12': !inline }" class="flex rounded w-full overflow-hidden md:ml-0 md:mb-0 shadow-2xl md:shadow-none glass lg:bg-transparent lg:dark:bg-transparent">
-      <ul class="flex flex-grow items-center justify-evenly text-xs py-2">
+  <div ref="socialBar" :class="!inline ? 'py-4 md:mt-12' : 'py-2'" class="flex rounded w-full overflow-hidden md:ml-0 md:mb-0 shadow-2xl md:shadow-none glass lg:bg-transparent lg:dark:bg-transparent">
+      <ul class="flex flex-grow items-center justify-evenly text-xs">
         <li class="mx-4 nav-link">
             <a href="https://twitter.com/mkryan1988" rel="noopener" target="_blank" class="flex items-center">
                 <VbaseIcon iconName="twitter" />

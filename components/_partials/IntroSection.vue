@@ -1,8 +1,8 @@
 <template>
-    <div class="relative grid stack overflow-hidden w-full h-full px-4 lg:px-16 lg:py-8">
-        <div class="w-full h-full z-20">
+    <div class="landing-img relative grid stack overflow-hidden w-full h-full">
+        <div class="w-full h-full z-20 p-8 lg:px-16 lg:py-8">
             <div class="ma-0 lg:mt-32">
-                <h2 class="text-4xl text-white font-xbold mb-4 md:text-6xl md:font-semibold text-left">
+                <h2 class="text-4xl text-white font-bold mb-4 text-left md:text-6xl">
                     Hi,
                     <br/>
                     Im Mark Ryan
@@ -17,12 +17,21 @@
                 </div>
             </div>
         </div>
-        <div class="blur-xs w-full h-full pointer-events-none z-10"></div>
-        <div class="landing-img1 w-full h-full hidden lg:grid justify-items-end items-end pointer-events-none transform -rotate-12">
+        <div class="w-full h-full pointer-events-none">
             <img
-                alt=""
-                :src="require('~/assets/rocket.png')"
-                style="width: 600px; height: 600px; margin-right: -50px; margin-bottom: -100px;"
+                alt="gradient background with abstract code image"
+                :src="require('~/assets/code-bg-400x400.png')"
+                class="w-full h-full md:hidden"
+            >
+            <img
+                alt="gradient background with abstract code image"
+                :src="require('~/assets/code-bg-1024x500.png')"
+                class="w-auto h-auto hidden md:block lg:hidden"
+            >
+            <img
+                alt="gradient background with abstract code image"
+                :src="require('~/assets/code-bg-800x1080.png')"
+                class="w-auto h-full hidden lg:block"
             >
         </div>
     </div>
@@ -40,13 +49,6 @@ export default defineComponent({
 });
 </script>
 <style lang="postcss" scoped>
-.landing-img {
-    background-image: url("~assets/1440-1080-icons.png");
-    background-size: contain;
-    background-clip: padding-box;
-    background-position: center;
-    background-repeat: no-repeat;
-}
 button {
     background-blend-mode: luminosity;
 }

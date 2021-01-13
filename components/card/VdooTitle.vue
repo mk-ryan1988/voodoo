@@ -1,6 +1,6 @@
 <template>
   <div
-    class="vdoo-title w-full h-full shadow-2xl p-8 lg:p-0 lg:text-center lg:mx-0"
+    class="vdoo-title w-full h-full shadow-2xl overflow-hidden lg:text-center lg:mx-0"
     :class="computedRadius"
   >
     <slot />
@@ -43,11 +43,13 @@ export default {
 
 <style>
   .vdoo-title {
-    /* background-color: #4158D0;  */
-    /* background-color: #3323F4; */
+    /* maybe */
+    background-image: linear-gradient(125deg, #3d3393 0%, #2b76b9 37%, #2cacd1 65%, #35eb93 100%);
+
+    /* pinky */
     /* background-image: linear-gradient(43deg, #3323F4 0%, #C850C0 46%); */
-    background-image: url('~assets/big-sur.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
+
+    /* Stephs */
+    /* background-image: linear-gradient(to right, #243949 0%, #517fa4 100%); */
   }
 </style>
