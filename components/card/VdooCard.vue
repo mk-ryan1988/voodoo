@@ -2,9 +2,9 @@
   <VbaseCard class="px-6 py-4" :class="{'transform hover:-translate-y-1 hover:scale-105 transition-transform ease-in-out duration-300' : grow}" :flat="flat">
     <div class="flex flex-col items-start">
          <div class="flex items-center justify-between w-full mb-4">
-          <VdooCardHeading>
+          <VdooHeading>
             <slot name="heading" />
-          </VdooCardHeading>
+          </VdooHeading>
           <VbaseIcon v-if="icon" :icon-name="icon" />
           <VdooAvatar v-if="hasImg" :bgImg="thumb" class="w-24"/>
         </div>
@@ -19,7 +19,7 @@
 <script lang="ts">
 import VbaseCard from './VbaseCard.vue';
 import VbaseIcon  from './../VbaseIcon.vue';
-import VdooCardHeading from './VdooCardHeading.vue';
+import VdooHeading from '~/components/VdooHeading.vue';
 import VdooAvatar from '~/components/VdooAvatar.vue';
 import { defineComponent, computed, ref } from '@vue/composition-api';
 
@@ -29,7 +29,7 @@ export default defineComponent({
     VbaseCard,
     VbaseIcon,
     VdooAvatar,
-    VdooCardHeading,
+    VdooHeading,
   },
   props: {
     icon : {

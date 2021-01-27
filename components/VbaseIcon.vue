@@ -29,7 +29,7 @@ export default defineComponent({
     const iconRef = ref(null) as any;
 
     onMounted(() => {
-      iconRef.value.firstChild.classList.add('stroke-current', 'fill-current');
+      // iconRef.value.firstChild.classList.add('stroke-current', 'fill-current');
       iconRef.value.firstChild.setAttribute('width', props.width);
       iconRef.value.firstChild.setAttribute('height', props.height);
     })

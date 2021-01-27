@@ -11,9 +11,12 @@
                     Full-Stack Developer | Web Maker
                 </h3>
                 <div class="text-left mb-4">
-                    <button class="p-3 text-white bg-gray-100 bg-opacity-60 rounded-3xl focus:outline-none focus:ring focus:border-white blur-lg">
-                        Contact Me
-                    </button>
+                    <a
+                        href="mailto:mkryan1988@gmail.com?subject=Contact - website"
+                        class="p-3 text-white bg-gray-100 bg-opacity-60 rounded-3xl focus:outline-none focus:ring focus:border-white blur-lg"
+                    >
+                        Get in touch
+                    </a>
                 </div>
             </div>
         </div>

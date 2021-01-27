@@ -7,10 +7,14 @@
     </header>
 
     <main class="lg:absolute lg:right-0 lg:w-7/12 lg:pl-24 lg:pr-32 mt-10">
-      <section class="mb-16 px-8">
+      <section>
+        <AboutSection/>
+        <TechSection/>
+      </section>
+
+      <section>
         <div class="flex justify-between items-center">
           <h2 class="mb-4 text-lg md:text-xl">Code and ramblings!</h2>
-          <!-- <a href="">See All</a> -->
         </div>
           <nuxt-link
             v-for="post in articles"
@@ -31,7 +35,8 @@
             </VdooCard>
           </nuxt-link>
       </section>
-      <section class="mb-8 px-8">
+
+      <section>
         <h2 class="mb-4 text-lg md:text-xl">What have I built?</h2>
         <VdooCard
           thumb="https://leaner-living.com/images/LEANER-LIVING-LOGO.png"
@@ -55,7 +60,7 @@
           </template>
         </VdooCard>
       </section>
-      <div id="socialBarContainer" class="fixed bottom-0 z-30 my-3 px-2 rounded w-full transform transition ease-out duration-100 md:relative md:px-8">
+      <div id="socialBarContainer" class="fixed bottom-0 z-30 my-3 px-2 rounded w-full transform transition ease-out duration-100 md:relative md:px-8 md:pb-12">
         <VdooSocialbar id="socialbar-mobile" />
       </div>
     </main>
@@ -63,14 +68,15 @@
 </template>
 
 <script>
-import VbaseIcon from '~/components/VbaseIcon.vue'
-import VdooAvatar from '~/components/VdooAvatar.vue'
-import VdooCard from '~/components/card/VdooCard.vue'
-import VbaseCard from '~/components/card/VbaseCard.vue'
-import VdooPolaroid from '~/components/card/VdooPolaroid.vue';
-import IntroSection from '~/components/_partials/IntroSection.vue'
+import VbaseIcon from '~/components/VbaseIcon.vue';
+import VdooAvatar from '~/components/VdooAvatar.vue';
+import VdooCard from '~/components/card/VdooCard.vue';
+import IntroSection from '~/components/_partials/IntroSection.vue';
 import VdooSocialbar from '~/components/navigation/VdooSocialbar.vue';
-import VdooTitle from '~/components/card/VdooTitle.vue'
+import VdooTitle from '~/components/card/VdooTitle.vue';
+import VdooDescList from '~/components/VdooDescList';
+import TechSection from '~/components/_partials/TechSection.vue';
+import AboutSection from '~/components/_partials/AboutSection.vue';
 
 export default {
   name: 'IndexView',
@@ -82,6 +88,9 @@ export default {
     IntroSection,
     VdooSocialbar,
     VdooTitle,
+    VdooDescList,
+    TechSection,
+    AboutSection
   },
   async asyncData ({ $content, params }) {
     const articles = await $content('articles')
@@ -105,6 +114,10 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+  section {
+    @apply mb-16 px-8
+  }
+
   .diagonal::before {
     content: "";
     position: absolute;

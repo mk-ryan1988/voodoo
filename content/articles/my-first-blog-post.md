@@ -1,6 +1,6 @@
 ---
-title: My first Blog Post
-description: Learning how to use @nuxt/content to create a blog
+title: Stacking Elements with Grid
+description: How to stack elements the modern way
 date: 1st July 2020
 length: 36 min read
 img: first-blog-post.jpg
