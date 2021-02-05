@@ -7,10 +7,10 @@
       </div>
     </div>
     <div class="ml-4">
-      <dt class="text-lg leading-6 font-medium text-gray-900">
+      <dt class="text-lg leading-6 font-medium text-gray-900 dark:text-white">
         <slot name="title" />
       </dt>
-      <dd class="mt-2 text-base text-gray-500">
+      <dd class="mt-2 text-base">
         <slot name="description" />
       </dd>
     </div>

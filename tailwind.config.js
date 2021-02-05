@@ -34,6 +34,7 @@ module.exports = {
    variants: {},
   plugins: [
     require('@tailwindcss/typography'),
+    require('@tailwindcss/aspect-ratio'),
     plugin(function({ addUtilities }) {
       const newUtilities = {
         '.blur-xs': {

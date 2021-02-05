@@ -1,69 +1,54 @@
 <template>
-  <div class="flex flex-col m-auto relative lg:flex-row lg:h-screen lg:overflow-auto">
-    <header class="flex items-center mx-3 lg:fixed lg:left-0 lg:mx-0 lg:w-5/12">
-      <VdooTitle>
-        <IntroSection />
-      </VdooTitle>
-    </header>
+  <div>
+    <section>
+      <AboutSection />
+      <TechSection />
+    </section>
 
-    <main class="lg:absolute lg:right-0 lg:w-7/12 lg:pl-24 lg:pr-32 mt-10">
-      <section>
-        <AboutSection/>
-        <TechSection/>
-      </section>
+    <section>
+      <div class="flex justify-between items-center">
+        <h2 class="mb-4 text-lg md:text-xl">Code and ramblings!</h2>
+      </div>
 
-      <section>
-        <div class="flex justify-between items-center">
-          <h2 class="mb-4 text-lg md:text-xl">Code and ramblings!</h2>
-        </div>
-          <nuxt-link
-            v-for="post in articles"
-            :key="post.slug"
+      <BlogSection
+        :articles="articles"
+      />
+    </section>
+
+    <section>
+      <h2 class="mb-4 text-lg md:text-xl">What have I built?</h2>
+
+      <VdooBlogCard
+        label="Freelance"
+        class="mb-3"
+      >
+        <template slot="heading">
+          Fresh Start <span class="text-base font-md">with</span> Leaner-Living
+        </template>
+        <template slot="content">
+          <p>
+            A Progressive Web App built with a Vue.js frontend and Google's Firebase API.
+            <br />
+            This product aids personal trianers programming and managing one-2-one and online clients.
+          </p>
+        </template>
+
+        <template slot="footer">
+          <div>
+            <span>#vue.js</span> <span>#firebase</span>
+          </div>
+
+          <!-- <nuxt-link
             :to="'/blog/' + post.slug"
           >
-            <VdooCard
-              flat
-              grow
-              class="mb-3"
-            >
-              <template slot="heading">{{post.title}}</template>
-              <template slot="content">
-                <p>
-                  {{post.description}}
-                </p>
-              </template>
-            </VdooCard>
-          </nuxt-link>
-      </section>
-
-      <section>
-        <h2 class="mb-4 text-lg md:text-xl">What have I built?</h2>
-        <VdooCard
-          thumb="https://leaner-living.com/images/LEANER-LIVING-LOGO.png"
-          flat
-          class="mb-2"
-        >
-          <template slot="heading">Fresh Start <span class="text-base font-md">with</span> Leaner-Living</template>
-          <template slot="content">
-            <p>
-              A Progressive Web App built with a Vue.js frontend and Google's Firebase API.
-              <br />
-              This product aids personal trianers programming and managing one-2-one and online clients.
-            </p>
-          </template>
-          <template slot="footer">
-            <div><span>#vue.js</span> <span>#firebase</span></div>
-            <a href="https://leaner-living.com/fresh-start/about" rel="noopener" target="_blank">
-              <VbaseIcon iconName="external-link" />
-              <span class="sr-only">View external link</span>
-            </a>
-          </template>
-        </VdooCard>
-      </section>
-      <div id="socialBarContainer" class="fixed bottom-0 z-30 my-3 px-2 rounded w-full transform transition ease-out duration-100 md:relative md:px-8 md:pb-12">
-        <VdooSocialbar id="socialbar-mobile" />
-      </div>
-    </main>
+            Read more
+          </nuxt-link> -->
+        </template>
+      </VdooBlogCard>
+    </section>
+    <div id="socialBarContainer" class="fixed bottom-0 z-30 my-3 px-2 rounded w-full transform transition ease-out duration-100 md:relative md:px-8 md:pb-12">
+      <VdooSocialbar id="socialbar-mobile" />
+    </div>
   </div>
 </template>
 
@@ -71,30 +56,28 @@
 import VbaseIcon from '~/components/VbaseIcon.vue';
 import VdooAvatar from '~/components/VdooAvatar.vue';
 import VdooCard from '~/components/card/VdooCard.vue';
-import IntroSection from '~/components/_partials/IntroSection.vue';
+import VdooBlogCard from '~/components/card/VdooBlogCard.vue';
 import VdooSocialbar from '~/components/navigation/VdooSocialbar.vue';
-import VdooTitle from '~/components/card/VdooTitle.vue';
-import VdooDescList from '~/components/VdooDescList';
 import TechSection from '~/components/_partials/TechSection.vue';
 import AboutSection from '~/components/_partials/AboutSection.vue';
+import BlogSection from '~/components/_partials/BlogSection.vue';
 
 export default {
   name: 'IndexView',
   layout: 'home',
   components: {
     VdooCard,
+    VdooBlogCard,
     VbaseIcon,
     VdooAvatar,
-    IntroSection,
     VdooSocialbar,
-    VdooTitle,
-    VdooDescList,
     TechSection,
-    AboutSection
+    AboutSection,
+    BlogSection
   },
   async asyncData ({ $content, params }) {
     const articles = await $content('articles')
-      .only(['title', 'slug', 'description'])
+      .only(['title', 'slug', 'description', 'tags'])
       .sortBy('createdAt', 'desc')
       .fetch();
 

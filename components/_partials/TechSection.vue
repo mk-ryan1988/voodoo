@@ -1,4 +1,4 @@
-<template functional>
+<template>
   <div class="mb-32">
     <VdooDescList
       class="mb-10"
@@ -12,7 +12,7 @@
         For Front-end magic
       </template>
       <template  slot="description">
-        I reside in two camps <a class="text-green-600 hover:underline" href="https://v3.vuejs.org/" target="_blank">Vue.js</a> and <a class="text-blue-600 hover:underline" href="https://reactjs.org/" target="_blank">React</a>. I enjoy the developer experience of the Vue and it the tool I am the most proficient in. However React has served me well in multiple projects and it's flexibility and large eco system is a plus.
+        I reside in two camps <a class="text-green-600" href="https://v3.vuejs.org/" target="_blank">Vue.js</a> and <a class="text-blue-600" href="https://reactjs.org/" target="_blank">React</a>. I enjoy the developer experience of the Vue and it the tool I am the most proficient in. However React has served me well in multiple projects and it's flexibility and large eco system is a plus.
       </template>
     </VdooDescList>
 
@@ -28,7 +28,7 @@
         For Back-end systems
       </template>
       <template  slot="description">
-        The majorty of my exerience is in PHP and with the <a class="text-red-600 hover:underline" href="https://laravel.com/" target="_blank">Laravel</a> framework. Without it I would be far less efficent, the framework has so many gems that I would sorely miss if I didnt use it.
+        The majorty of my exerience is in PHP and with the <a class="text-red-600" href="https://laravel.com/" target="_blank">Laravel</a> framework. Without it I would be far less efficent, the framework has so many gems that I would sorely miss if I didnt use it.
       </template>
     </VdooDescList>
 
@@ -51,11 +51,14 @@
 </template>
 
 <script>
-import VbaseIcon from '../VbaseIcon.vue'
-import VdooDescList from '../VdooDescList.vue'
+import VbaseIcon from '~/components/VbaseIcon.vue';
+import VdooDescList from '../VdooDescList.vue';
 
 export default {
   name: 'TechSection',
-  components: { VdooDescList, VbaseIcon },
+  components: {
+    VbaseIcon,
+    VdooDescList
+  },
 }
 </script>

@@ -23,9 +23,10 @@ export default defineComponent({
     const computedStyles = computed(() => {
       let styles = [
         'overflow-hidden',
-        'rounded',
+        'rounded-md',
         'bg-white',
         'dark:bg-gray-900',
+        'p-4'
       ];
       if (!props.flat) styles.push('shadow');
       if (!props.color) styles.push('vbaseCard');

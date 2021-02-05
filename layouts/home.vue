@@ -1,21 +1,28 @@
 <template>
-    <div class="min-w-screen min-h-screen">
-        <nuxt />
-        <!-- <div id="socialBarContainer" class="fixed bottom-0 z-30 my-3 px-2 rounded w-full transform transition ease-out duration-100 md:hidden">
-          <VdooSocialbar id="socialbar-desktop" class="bg-card shadow-2xl" />
-        </div> -->
-    </div>
+  <div class="flex flex-col m-auto relative lg:flex-row lg:h-screen lg:overflow-auto">
+    <header class="flex items-center mx-3 lg:py-12 lg:fixed lg:h-full lg:left-0 lg:top-0 lg:mx-0 lg:w-5/12">
+      <VdooTitle>
+        <IntroSection />
+      </VdooTitle>
+    </header>
+
+    <main class="lg:absolute lg:right-0 lg:w-7/12 lg:pl-24 lg:pr-32 mt-10">
+      <nuxt />
+    </main>
+  </div>
 </template>
 
 <script lang="ts">
 import useTheme from '~/utilities/theme.ts';
-import VdooSocialbar from '~/components/navigation/VdooSocialbar.vue';
+import VdooTitle from '~/components/card/VdooTitle.vue';
+import IntroSection from '~/components/_partials/IntroSection.vue';
 import { defineComponent, reactive, onMounted, ref } from '@vue/composition-api';
 
 export default defineComponent({
   name: 'home' as string,
   components: {
-    VdooSocialbar,
+    VdooTitle,
+    IntroSection
   },
   setup(props) {
     const { setInitialTheme } = useTheme();

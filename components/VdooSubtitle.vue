@@ -1,5 +1,5 @@
 <template functional>
-  <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase">
+  <h2 class="text-base text-indigo-600 dark:text-indigo-600 font-medium tracking-wide uppercase">
     <slot />
   </h2>
 </template>

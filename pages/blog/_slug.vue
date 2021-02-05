@@ -2,7 +2,7 @@
   <div class="flex flex-col justify-between m-auto min-h-full">
       <VdooTitle origin="top">
         <div class="flex items-center justify-center">
-          <VbaseGlass class="text-center p-8 my-8 md:my-12 md:mt-32">
+          <div class="text-center p-8 my-8 md:my-12 md:mt-32">
             <header>
               <h1 class="stack text-4xl text-white font-bold mb-2">
                   {{ article.title }}
@@ -13,11 +13,11 @@
                 {{ article.length }}
               </div>
             </header>
-          </VbaseGlass>
+          </div>
         </div>
       </VdooTitle>
 
-      <main>
+      <main class="px-6 sm:px-8">
         <article class="min-w-full prose lg:prose-lg">
           <nuxt-content :document="article" />
         </article>
