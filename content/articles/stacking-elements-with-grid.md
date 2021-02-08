@@ -3,7 +3,7 @@ title: Stacking Elements with Grid
 description: How to stack elements the modern way Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed nihil, numquam tempora architecto suscipit neque in eum iure, odit molestiae culpa veritatis facere sint vitae nulla fugiat recusandae magni! Porro.
 date: 1st July 2020
 length: 36 min read
-img: first-blog-post.jpg
+thumbnail: null
 alt: my first blog post
 tags: [
   'CSS',

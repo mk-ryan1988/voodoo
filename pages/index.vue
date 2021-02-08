@@ -2,6 +2,7 @@
   <div>
     <section>
       <AboutSection />
+
       <TechSection />
     </section>
 
@@ -22,6 +23,11 @@
         label="Freelance"
         class="mb-3"
       >
+        <template slot="image">
+          <img
+          :src="require(`~/assets/projects/fresh-start.png`)" alt="">
+        </template>
+
         <template slot="heading">
           Fresh Start <span class="text-base font-md">with</span> Leaner-Living
         </template>
@@ -77,7 +83,7 @@ export default {
   },
   async asyncData ({ $content, params }) {
     const articles = await $content('articles')
-      .only(['title', 'slug', 'description', 'tags'])
+      .only(['title', 'slug', 'description', 'thumbnail', 'tags'])
       .sortBy('createdAt', 'desc')
       .fetch();
 

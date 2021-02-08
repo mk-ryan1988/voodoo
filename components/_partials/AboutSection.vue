@@ -9,6 +9,7 @@
     </p>
     <p class="mt-4 max-w-2xl text-xl lg:mx-auto">
       As a person and developer I sweat the small stuff and I belive it's these micro decisions that help me when I'm making intuative APIs or helpful UIs.
+      This one was built to showcase some things and to have a bit of a playground, enjoy!
     </p>
   </div>
 </template>
