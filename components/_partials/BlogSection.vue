@@ -7,10 +7,10 @@
       label="blog"
       truncate
     >
-      <template v-if="post.thumbnail" slot="image">
+      <!-- <template v-if="post.thumbnail" slot="image">
         <img
         :src="require(`~/assets/blogs/${post.thumbnail}`)" alt="">
-      </template>
+      </template> -->
       <template slot="heading">
         {{post.title}}
       </template>
