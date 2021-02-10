@@ -1,8 +1,8 @@
 <template>
-  <VbaseCard flat :class="$slots.image ? 'md:grid md:grid-rows-3 md:grid-flow-col' : 'flex flex-col'" class="gap-4">
+  <VbaseCard flat :class="$slots.image ? 'md:grid md:grid-rows-3 md:grid-cols-3 md:grid-flow-col' : 'flex flex-col'" class="gap-4">
     <div
       v-if="$slots.image"
-      class="row-span-3 overflow-hidden max-w-full rounded-md aspect-w-16 aspect-h-9 w-full mb-4 md:m-0 md:w-64"
+      class="row-span-3 overflow-hidden max-w-full rounded-md aspect-w-16 aspect-h-9 mb-4 md:m-0 md:w-64"
     >
       <slot name="image" />
     </div>

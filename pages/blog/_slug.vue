@@ -17,7 +17,7 @@
         </div>
       </VdooTitle>
 
-      <main class="px-6 sm:px-8">
+      <main class="px-6 mt-6 lg:mt-12 sm:px-8">
         <article class="min-w-full prose lg:prose-lg">
           <nuxt-content :document="article" />
         </article>

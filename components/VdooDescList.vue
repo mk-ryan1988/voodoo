@@ -2,7 +2,7 @@
   <dl>
     <div class="flex">
     <div class="flex-shrink-0">
-      <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+      <div class="flex items-center justify-center h-12 w-12 rounded-md bg-primary dark:bg-primary text-white">
         <slot name="icon" />
       </div>
     </div>

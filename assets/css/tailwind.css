@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  @apply h-screen w-screen bg-gray-100 dark:bg-black text-gray-500;
+  @apply h-screen w-screen bg-gray-100 dark:bg-gray-900 text-gray-500;
 }
 
 section {
@@ -26,6 +26,10 @@ h1,h2,h3,h4,h5,h6 {
 
 a {
   @apply hover:underline;
+}
+
+hr {
+  @apply w-10/12 h-0.5 bg-gray-300 dark:bg-gray-900;
 }
 
 @import 'tailwindcss/components';

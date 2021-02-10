@@ -1,5 +1,5 @@
 <template>
-  <div ref="socialBar" :class="!inline ? 'py-4 md:mt-12' : 'py-2'" class="flex rounded w-full overflow-hidden md:ml-0 md:mb-0 shadow-2xl md:shadow-none glass lg:bg-transparent lg:dark:bg-transparent">
+  <div ref="socialBar" :class="!inline ? 'py-4 md:mt-12' : 'py-2'" class="flex rounded w-full overflow-hidden md:ml-0 md:mb-0 shadow-2xl md:shadow-none glass">
       <ul class="flex flex-grow items-center justify-evenly text-xs">
         <li
           class="mx-4 nav-link"
@@ -11,7 +11,7 @@
           >
             <VbaseIcon iconName="home" />
             <div class="hidden md:block">
-                <span class="mx-3 font-semibold">Twitter</span>
+                <span class="mx-3 font-semibold">Home</span>
             </div>
           </nuxt-link>
           <a href="" rel="noopener" target="_blank" class="flex items-center">

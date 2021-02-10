@@ -1,5 +1,6 @@
 const plugin = require('tailwindcss/plugin');
 const colors = require('tailwindcss/colors')
+// console.log(colors);
 
 module.exports = {
   purge: {
@@ -22,6 +23,14 @@ module.exports = {
       colors: {
         transparent: 'transparent',
         current: 'currentColor',
+        primary: {
+          DEFAULT: colors.indigo['500'],
+          dark: colors.indigo['500'],
+        },
+        secondary: {
+          DEFAULT: colors.violet['500'],
+          dark: colors.violet['500'],
+        },
         black: colors.black,
         white: colors.white,
         gray: colors.trueGrey,

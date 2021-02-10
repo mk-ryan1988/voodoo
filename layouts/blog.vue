@@ -1,15 +1,13 @@
 <template>
   <div class="flex flex-col items-center overflow-x-hidden w-screen min-h-screen">
     <VdooNavbar />
-    <main class="flex-grow w-full px-4 border-gray-200 border-b-2 sm:px-6 xl:max-w-4xl xl:px-0">
+    <main class="flex-grow w-full px-4 sm:px-6 xl:max-w-4xl xl:px-0">
       <nuxt/>
     </main>
 
-    <div class="space-y-8 divide-y divide-gray-500">
+    <hr />
 
-    </div>
-
-    <div class="flex justify-center items-center h-32 md:h-64 w-full bg-">
+    <div class="flex justify-center items-center mx-4 h-32 md:h-64 w-full">
       <div class="flex">
         Made with
         <VbaseIcon iconName="heart" class="mx-2" />

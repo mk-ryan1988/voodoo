@@ -25,7 +25,8 @@ export default defineComponent({
         'overflow-hidden',
         'rounded-md',
         'bg-white',
-        'dark:bg-gray-900',
+        'dark:bg-gray-800',
+        'dark:text-gray-400',
         'p-4'
       ];
       if (!props.flat) styles.push('shadow');

@@ -3,7 +3,7 @@
     <VdooDescList
       class="mb-10"
     >
-      <template  slot="icon">
+      <template slot="icon">
         <VbaseIcon
           icon-name="color-swatch"
         />
