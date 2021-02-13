@@ -30,7 +30,6 @@
 <script>
 import VdooBlogNav from '~/components/navigation/VdooBlogNav.vue';
 import VdooTitle from '~/components/card/VdooTitle.vue'
-import VbaseGlass from '~/components/glass/VbaseGlass.vue';
 
 export default {
     name: 'Blog',
@@ -42,7 +41,6 @@ export default {
     components: {
       VdooBlogNav,
       VdooTitle,
-      VbaseGlass,
     },
     async asyncData ({ $content, params }) {
       const article = await $content('articles', params.slug).fetch()

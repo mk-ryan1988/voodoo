@@ -8,20 +8,15 @@
 
     <section>
       <div class="flex justify-between items-center">
-        <h2 class="mb-4 text-lg md:text-xl">Code and ramblings!</h2>
+        <h2 class="mb-6 text-lg md:text-xl">Code, ramblings and projects!</h2>
       </div>
 
       <BlogSection
         :articles="articles"
       />
-    </section>
-
-    <section>
-      <h2 class="mb-4 text-lg md:text-xl">What have I built?</h2>
 
       <VdooBlogCard
         label="Freelance"
-        class="mb-3"
       >
         <template slot="image">
           <img
@@ -43,18 +38,11 @@
           <div>
             <span>#vue.js</span> <span>#firebase</span>
           </div>
-
-          <!-- <nuxt-link
-            :to="'/blog/' + post.slug"
-          >
-            Read more
-          </nuxt-link> -->
         </template>
       </VdooBlogCard>
     </section>
-    <div id="socialBarContainer" class="fixed bottom-0 z-30 my-3 px-2 rounded w-full transform transition ease-out duration-100 md:relative md:px-8 md:pb-12">
-      <VdooSocialbar id="socialbar-mobile" />
-    </div>
+
+    <VdooSocialbar />
   </div>
 </template>
 
@@ -79,7 +67,7 @@ export default {
     VdooSocialbar,
     TechSection,
     AboutSection,
-    BlogSection
+    BlogSection,
   },
   async asyncData ({ $content, params }) {
     const articles = await $content('articles')

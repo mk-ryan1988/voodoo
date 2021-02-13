@@ -17,6 +17,10 @@ export default defineComponent({
     flat: {
       type: Boolean,
       default: false
+    },
+    padding: {
+      type: Boolean,
+      default: true,
     }
   },
     setup(props) {
@@ -27,8 +31,8 @@ export default defineComponent({
         'bg-white',
         'dark:bg-gray-800',
         'dark:text-gray-400',
-        'p-4'
       ];
+      if (props.padding) styles.push('p-4');
       if (!props.flat) styles.push('shadow');
       if (!props.color) styles.push('vbaseCard');
       if (props.color) styles.push(props.color);

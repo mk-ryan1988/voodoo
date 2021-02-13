@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-32">
+  <div class="mb-20 md:mt-28 md:mb-32">
     <VdooDescList
       class="mb-10"
     >

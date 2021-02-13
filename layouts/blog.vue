@@ -14,9 +14,10 @@
         in Brighton • by Mark Ryan
       </div>
     </div>
-    <div id="socialBarContainer" class="fixed bottom-0 z-30 my-3 px-2 rounded w-full transform transition ease-out duration-100 md:hidden">
-      <VdooSocialbar id="socialbar-mobile" class="bg-white dark:bg-black shadow-2xl" />
-    </div>
+
+    <VdooSocialbar
+      class="fixed md:hidden"
+    />
   </div>
 </template>
 

@@ -3,7 +3,7 @@
     <VdooBlogCard
       v-for="post in articles"
       :key="post.slug"
-      class="mb-3"
+      class="mb-6"
       label="blog"
       truncate
     >

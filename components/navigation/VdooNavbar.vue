@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="hidden sm:ml-6 sm:block">
-            <VdooSocialbar id="socialbar-desktop" :inline="true" />
+            <VdooSocialbar id="socialbar-desktop" inline />
         </div>
       </div>
     </div>
