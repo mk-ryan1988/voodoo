@@ -17,15 +17,8 @@
 
       <VdooBlogCard
         label="Freelance"
+        :thumbnail="require('~/assets/projects/fresh-start.png')"
       >
-        <template slot="image">
-          <img
-          width="500"
-          height="500"
-          loading="lazy"
-          :src="require(`~/assets/projects/fresh-start.png`)" alt="">
-        </template>
-
         <template slot="heading">
           Fresh Start <span class="text-base font-md">with</span> Leaner-Living
         </template>

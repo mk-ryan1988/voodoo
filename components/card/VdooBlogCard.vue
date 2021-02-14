@@ -1,10 +1,14 @@
 <template>
-  <VbaseCard flat :class="$slots.image ? 'md:grid md:grid-rows-3 md:grid-cols-3 md:grid-flow-col' : 'flex flex-col'" class="gap-4">
+  <VbaseCard flat :class="thumbnail ? 'md:grid md:grid-rows-3 md:grid-cols-3 md:grid-flow-col' : 'flex flex-col'" class="gap-4">
     <div
-      v-if="$slots.image"
+      v-if="thumbnail"
       class="row-span-3 overflow-hidden max-w-full rounded-md aspect-w-16 aspect-h-9 mb-4 md:m-0 md:w-64"
     >
-      <slot name="image" />
+      <div
+        :style="{ backgroundImage: `url('${thumbnail}` }"
+        class=" bg-cover"
+      />
+      <!-- <slot name="image" /> -->
     </div>
     <div class="col-span-2">
       <VdooSubtitle>
@@ -14,7 +18,7 @@
         <slot name="heading" />
       </div>
     </div>
-    <div :class="$slots.image ? 'row-span-2' : ''" class="col-span-2">
+    <div :class="thumbnail ? 'row-span-2' : ''" class="col-span-2">
       <div :class="{ 'truncate-3' : truncate }" class="overflow-ellipsis overflow-hidden text-base">
         <slot name="content" />
       </div>
@@ -41,6 +45,10 @@ export default {
       type: String,
       required: false,
       defalut: ''
+    },
+    thumbnail: {
+      type: String,
+      required: false,
     },
     truncate: {
       type: Boolean,
