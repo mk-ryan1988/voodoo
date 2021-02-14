@@ -8,7 +8,6 @@
         :style="{ backgroundImage: `url('${thumbnail}` }"
         class=" bg-cover"
       />
-      <!-- <slot name="image" /> -->
     </div>
     <div class="col-span-2">
       <VdooSubtitle>
