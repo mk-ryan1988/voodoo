@@ -68,10 +68,10 @@ export default defineComponent({
       default: false,
     }
   },
-  setup(context: any) {
-    const { toggleLocalTheme } = useTheme();
+  setup(props, context: any) {
+    const { setInitialTheme, toggleLocalTheme } = useTheme();
 
-    const toggleTheme = () => {
+    const toggleTheme = (isDarkMode: boolean) => {
       context.root.$darkMode = !context.root.$darkMode;
       let activeTheme = context.root.$darkMode ? 'dark' : 'light';
       toggleLocalTheme(activeTheme);

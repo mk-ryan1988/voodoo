@@ -1,7 +1,7 @@
 <template>
     <div class="landing-img relative grid stack overflow-hidden w-full h-full">
         <div class="w-full h-full z-20 p-8 lg:px-16 lg:py-8">
-            <div class="ma-0 lg:mt-32">
+            <div class="ma-0 lg:mt-8">
                 <h2 class="text-4xl text-white font-bold mb-4 text-left md:text-6xl">
                     Hi,
                     <br/>
@@ -20,21 +20,12 @@
                 </div>
             </div>
         </div>
-        <div class="w-full h-full pointer-events-none">
+        <div style="max-width: 750px;" class="pointer-events-none aspect-w-1 aspect-h-1 lg:aspect-w-1 lg:aspect-h-1">
             <img
+                width="750"
+                height="750"
                 alt="gradient background with abstract code image"
-                :src="require('~/assets/code-bg-400x400.png')"
-                class="w-full h-full md:hidden"
-            >
-            <img
-                alt="gradient background with abstract code image"
-                :src="require('~/assets/code-bg-1024x500.png')"
-                class="w-auto h-auto hidden md:block lg:hidden"
-            >
-            <img
-                alt="gradient background with abstract code image"
-                :src="require('~/assets/code-bg-800x1080.png')"
-                class="w-auto h-full hidden lg:block"
+                :src="require('~/assets/code-bg-750x750.svg')"
             >
         </div>
     </div>

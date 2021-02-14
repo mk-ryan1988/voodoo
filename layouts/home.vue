@@ -1,6 +1,6 @@
 <template>
-  <div class="flex flex-col m-auto relative lg:flex-row lg:h-screen lg:overflow-auto">
-    <header class="flex items-center mx-4 md:mx-6 lg:py-12 lg:fixed lg:h-full lg:left-0 lg:top-0 lg:mx-0 lg:w-5/12">
+  <div class="flex flex-col items-center m-auto relative lg:flex-row lg:items-start lg:h-screen lg:overflow-auto">
+    <header style="max-width: 750px;" class="flex items-center mx-4 md:mx-6 lg:fixed lg:left-0 lg:w-5/12 lg:my-auto lg:mx-0 lg:transform lg:-translate-y-1/2 lg:top-1/2">
       <VdooTitle>
         <IntroSection />
       </VdooTitle>
