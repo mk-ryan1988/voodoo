@@ -20,6 +20,9 @@
       >
         <template slot="image">
           <img
+          width="500"
+          height="500"
+          loading="lazy"
           :src="require(`~/assets/projects/fresh-start.png`)" alt="">
         </template>
 
@@ -95,19 +98,6 @@ export default {
     @apply mb-16 px-8
   }
 
-  .diagonal::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    transform: skewY(3deg);
-    transform-origin: 50% 0;
-    outline: 1px solid transparent;
-    backface-visibility: hidden;
-    background-color: var(--body);
-  }
   header {
     @media (min-width: 1024px) {
         height: calc(100vh - 5rem);
