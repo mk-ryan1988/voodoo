@@ -2,7 +2,7 @@
   <VbaseCard flat :class="thumbnail ? 'md:grid md:grid-rows-3 md:grid-cols-3 md:grid-flow-col' : 'flex flex-col'" class="gap-4">
     <div
       v-if="thumbnail"
-      class="row-span-3 overflow-hidden max-w-full rounded-md aspect-w-16 aspect-h-9 mb-4 md:m-0 md:w-64"
+      class="row-span-3 bg-gray-100 dark:bg-gray-900 overflow-hidden max-w-full rounded-md aspect-w-16 aspect-h-9 mb-4 md:m-0 md:w-64"
     >
       <div
         :style="{ backgroundImage: `url('${thumbnail}` }"

@@ -59,7 +59,7 @@ export default {
     },
     head () {
       return {
-        title: 'Voodoo - ' + this.article.title,
+        title: 'Hey Mark - ' + this.article.title,
         meta: [
           { hid: 'blog', name: this.article.title, content: this.article.description }
         ]

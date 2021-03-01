@@ -77,7 +77,7 @@ export default {
   },
   head () {
     return {
-      title: 'Voodoo - Mark Ryan',
+      title: 'Hey Mark - About',
       meta: [
         { hid: 'about_me', name: 'about_me', content: 'Voodoo developer. A Short synopsis of me as a developer and a person.' }
       ]
