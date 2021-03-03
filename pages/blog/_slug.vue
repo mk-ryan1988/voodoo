@@ -1,6 +1,9 @@
 <template>
   <div class="flex flex-col justify-between m-auto min-h-full">
-      <VdooTitle origin="top">
+      <VdooTitle
+        bigSur
+        origin="top"
+      >
         <div class="flex items-center justify-center">
           <div class="text-center p-8 my-8 md:my-12 md:mt-32">
             <header>
@@ -18,7 +21,7 @@
       </VdooTitle>
 
       <main class="px-6 mt-6 lg:mt-12 sm:px-8">
-        <article class="min-w-full prose lg:prose-lg">
+        <article class="min-w-full prose dark:prose-dark lg:prose-lg">
           <nuxt-content :document="article" />
         </article>
       </main>
@@ -70,7 +73,7 @@ export default {
 <style lang="postcss">
   .nuxt-content {
     & pre {
-      @apply rounded bg-gray-900;
+      @apply rounded bg-black;
     }
     & img {
       @apply shadow-lg rounded;

@@ -5,7 +5,7 @@
         <div class="flex items-center">
             <div class="flex-shrink-0">
               <nuxt-link to="/" class="inline-flex items-center">
-                <h1 class="font-bold text-2xl">Voodoo Dev</h1>
+                <h1 class="font-bold text-2xl">Hey, Mark</h1>
               </nuxt-link>
             </div>
         </div>

@@ -36,35 +36,95 @@ module.exports = {
         indigo: colors.indigo,
         red: colors.rose,
         yellow: colors.amber,
-      }
+      },
+      typography: (theme) => ({
+        default: {
+            css: {
+                color: theme('colors.gray.900'),
+                a: {
+                    color: theme('colors.blue.700'),
+                    '&:hover': {
+                        color: theme('colors.blue.700'),
+                    },
+                },
+            },
+        },
+
+        dark: {
+            css: {
+                color: theme('colors.gray.300'),
+                a: {
+                    color: theme('colors.green.500'),
+                    '&:hover': {
+                        color: theme('colors.green.500'),
+                    },
+                },
+
+                h1: {
+                    color: theme('colors.gray.300'),
+                },
+                h2: {
+                    color: theme('colors.gray.300'),
+                },
+                h3: {
+                    color: theme('colors.gray.300'),
+                },
+                h4: {
+                    color: theme('colors.gray.300'),
+                },
+                h5: {
+                    color: theme('colors.gray.300'),
+                },
+                h6: {
+                    color: theme('colors.gray.300'),
+                },
+
+                strong: {
+                    color: theme('colors.gray.300'),
+                },
+
+                code: {
+                    color: theme('colors.gray.300'),
+                },
+
+                figcaption: {
+                    color: theme('colors.gray.500'),
+                },
+            },
+        },
+    }),
      },
    },
-   variants: {},
-  plugins: [
-    require('@tailwindcss/typography'),
-    require('@tailwindcss/aspect-ratio'),
-    plugin(function({ addUtilities }) {
-      const newUtilities = {
-        '.blur-xs': {
-          backdropFilter: 'blur(2px)'
-        },
-        '.blur-sm': {
-          backdropFilter: 'blur(10px)'
-        },
-        '.blur-md': {
-          backdropFilter: 'blur(25px)'
-        },
-        '.blur-lg': {
-          backdropFilter: 'blur(50px)'
-        },
-        '.blur-xl': {
-          backdropFilter: 'blur(100px)'
-        },
-      }
+   variants: {
+    extend: {
+      typography: ['dark']
+    }
+  },
+   plugins: [
+      require('@tailwindcss/typography'),
+      require('@tailwindcss/aspect-ratio'),
+      plugin(function({ addUtilities }) {
+        const newUtilities = {
+          '.blur-xs': {
+            backdropFilter: 'blur(2px)'
+          },
+          '.blur-sm': {
+            backdropFilter: 'blur(10px)'
+          },
+          '.blur-md': {
+            backdropFilter: 'blur(25px)'
+          },
+          '.blur-lg': {
+            backdropFilter: 'blur(50px)'
+          },
+          '.blur-xl': {
+            backdropFilter: 'blur(100px)'
+          },
+        }
 
-      addUtilities(newUtilities, {
-        variants: ['responsive', 'hover'],
-      });
-    })
-  ],
+        addUtilities(newUtilities, {
+          variants: ['responsive', 'hover'],
+        });
+      })
+    ],
  };

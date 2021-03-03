@@ -22,7 +22,6 @@
 </template>
 
 <script lang="ts">
-import useTheme from '~/utilities/theme.ts';
 import { defineComponent } from '@vue/composition-api';
 import VdooNavbar from '~/components/navigation/VdooNavbar.vue';
 import VdooSocialbar from '~/components/navigation/VdooSocialbar.vue';
