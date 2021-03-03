@@ -1,7 +1,10 @@
 <template>
   <div
     class="vdoo-title w-full h-full shadow-2xl overflow-hidden lg:text-center lg:mx-0"
-    :class="computedRadius"
+    :class="[
+      computedRadius,
+      computedBg
+    ]"
   >
     <slot />
   </div>
@@ -18,8 +21,15 @@ export default {
         return ['top', 'left', 'bottom', 'right', 'middle'].indexOf(value) !== -1
       }
     },
+    bigSur: {
+      type: Boolean,
+      default: false
+    },
   },
   computed: {
+    computedBg() {
+      return this.bigSur ? 'big-sur' : 'gradient'
+    },
     computedRadius() {
       switch (this.origin) {
         case 'top':
@@ -32,7 +42,6 @@ export default {
           return 'rounded-l-3xl'
         case 'middle':
           return 'rounded-3xl'
-          break;
         default:
           return 'rounded-b-3xl rounded-b-3xl lg:rounded-b-none lg:rounded-r-3xl'
       }
@@ -41,8 +50,12 @@ export default {
 }
 </script>
 
-<style>
-  .vdoo-title {
+<style scoped>
+  .big-sur {
+    background-image: url('~assets/blogs/big-sur.jpg');
+    background-size: cover;
+  }
+  .gradient {
     /* maybe */
     background-image: linear-gradient(125deg, #3d3393 0%, #2b76b9 37%, #2cacd1 65%, #35eb93 100%);
 

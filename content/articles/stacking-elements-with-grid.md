@@ -1,34 +1,57 @@
 ---
 title: Stacking Elements with Grid
-description: How to stack elements the modern way Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed nihil, numquam tempora architecto suscipit neque in eum iure, odit molestiae culpa veritatis facere sint vitae nulla fugiat recusandae magni! Porro.
-date: 1st July 2020
-length: 36 min read
+description: I'll quickly show you how to stack html elements using CSS Grid.
+date: 3rd March 2020
+length: 3 min read
 thumbnail: null
-alt: my first blog post
+alt: Stacking with CSS Grid
 tags: [
   'CSS',
   'tailwind',
 ]
 ---
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed nihil, numquam tempora architecto suscipit neque in eum iure, odit molestiae culpa veritatis facere sint vitae nulla fugiat recusandae magni! Porro.
+Stacking an element on top of another used to be a task commonly solved using  `position: absolute` ... followed by forgetting to add `position: relative` to the parent and seeing the element in question fly off in a totally unwanted direction.
+<br>
+However now I utilise the power of `display: grid`.
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed nihil, numquam tempora architecto suscipit neque in eum iure, odit molestiae culpa veritatis facere sint vitae nulla fugiat recusandae magni! Porro.
+<div class=" m-auto h-96">
+  <div class="h-full p-12 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 rounded grid stack">
+    <div class="grid stack transform -translate-x-4 mb-6">
+      <div class="glass z-10"></div>
+      <div class="glass z-20 transform translate-x-8 translate-y-6"></div>
+    </div>
+  </div>
+</div>
 
-```js
-function test() {
-  console.log("notice the blank line before this function?");
+We can achieve the above stacking, demo'd here in the form the the "Glassmorphism" trend, by making all the child elements of a grid span the whole area. The best part is we can do it in two just a few lines of css...
+
+```css
+.grid {
+	display: grid
+}
+
+.grid.stack > * {
+    grid-column: 1;
+    grid-row: 1;
 }
 ```
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed nihil, numquam tempora architecto suscipit neque in eum iure, odit molestiae culpa veritatis facere sint vitae nulla fugiat recusandae magni! Porro.
+I like this method for a few reasons. One is that as this problem feels like a layout problem and with that in mind it makes more sense to use a more modern and common layout tool.
+<br>
+Another plus for this method is that we can now easily stack multiple elements on top of one another by adding multiple children inside an element with the classes `grid`  and `stack`. If however you are not a fan of the `*` selector, as there can be some performance concerns, you can easily reach for the following CSS
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed nihil, numquam tempora architecto suscipit neque in eum iure, odit molestiae culpa veritatis facere sint vitae nulla fugiat recusandae magni! Porro.
+```css
+.grid {
+	display: grid
+}
 
-```html
-<main class="flex-grow max-w-3xl mx-auto px-4 sm:px-6 xl:max-w-4xl xl:px-0">
-  <nuxt/>
-</main>
+.stack {
+    grid-column: 1;
+    grid-row: 1;
+}
 ```
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed nihil, numquam tempora architecto suscipit neque in eum iure, odit molestiae culpa veritatis facere sint vitae nulla fugiat recusandae magni! Porro.
+And lastly when stacking elements don't forget to add the relevant `z-index`.
+
+

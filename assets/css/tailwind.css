@@ -40,7 +40,7 @@ hr {
 .dark {
   & .glass {
     @apply rounded-md blur-md;
-    background: linear-gradient(134.23deg, rgba(0, 0, 0, 0.6) 2.91%, rgba(0, 0, 0, 0.1) 101.26%);
+    background: linear-gradient(134.23deg, rgba(17, 24, 39, 0.6) 2.91%, rgba(17, 24, 39, 0.1) 101.26%);
   }
 }
 

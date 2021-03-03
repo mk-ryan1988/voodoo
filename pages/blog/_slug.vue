@@ -5,8 +5,8 @@
         origin="top"
       >
         <div class="flex items-center justify-center">
-          <div class="text-center p-8 my-8 md:my-12 md:mt-32">
-            <header>
+          <div class="text-center p-4 my-4 md:my-12 md:mt-32">
+            <header class="glass p-8">
               <h1 class="stack text-4xl text-white font-bold mb-2">
                   {{ article.title }}
               </h1>
@@ -73,7 +73,7 @@ export default {
 <style lang="postcss">
   .nuxt-content {
     & pre {
-      @apply rounded bg-black;
+      @apply rounded bg-gray-800;
     }
     & img {
       @apply shadow-lg rounded;
