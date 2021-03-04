@@ -1,6 +1,6 @@
 <template>
   <div
-    class="vdoo-title w-full h-full shadow-2xl overflow-hidden lg:text-center lg:mx-0"
+    class="vdoo-title w-full h-full shadow-2xl overflow-hidden lg:text-center lg:mx-0 bg-gradient-to-br from-yellow-400 via-red-500 to-pink-500 dark:from-green-400 dark:via-red-indigo dark:to-blue-500"
     :class="[
       computedRadius,
       computedBg
@@ -28,7 +28,7 @@ export default {
   },
   computed: {
     computedBg() {
-      return this.bigSur ? 'big-sur' : 'gradient'
+      return this.bigSur ? 'big-sur' : ''
     },
     computedRadius() {
       switch (this.origin) {
@@ -57,7 +57,7 @@ export default {
   }
   .gradient {
     /* maybe */
-    background-image: linear-gradient(125deg, #3d3393 0%, #2b76b9 37%, #2cacd1 65%, #35eb93 100%);
+    /* background-image: linear-gradient(125deg, #3d3393 0%, #2b76b9 37%, #2cacd1 65%, #35eb93 100%); */
 
     /* pinky */
     /* background-image: linear-gradient(43deg, #3323F4 0%, #C850C0 46%); */

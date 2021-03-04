@@ -7,7 +7,7 @@
     </section>
 
     <section>
-      <div class="flex justify-between items-center">
+      <div class="flex justify-between items-center md:justify-center">
         <h2 class="mb-6 text-lg md:text-xl">Code, ramblings and projects!</h2>
       </div>
 

@@ -23,11 +23,11 @@ module.exports = {
         transparent: 'transparent',
         current: 'currentColor',
         primary: {
-          DEFAULT: colors.indigo['500'],
+          DEFAULT: colors.yellow['500'],
           dark: colors.indigo['500'],
         },
         secondary: {
-          DEFAULT: colors.violet['500'],
+          DEFAULT: colors.orange['500'],
           dark: colors.violet['500'],
         },
         black: colors.black,
@@ -35,12 +35,12 @@ module.exports = {
         gray: colors.trueGrey,
         indigo: colors.indigo,
         red: colors.rose,
-        yellow: colors.amber,
+        yellow: colors.yellow,
       },
       typography: (theme) => ({
         default: {
             css: {
-                color: theme('colors.gray.900'),
+                color: theme('colors.gray.800'),
                 a: {
                     color: theme('colors.blue.700'),
                     '&:hover': {
@@ -52,7 +52,7 @@ module.exports = {
 
         dark: {
             css: {
-                color: theme('colors.gray.300'),
+                color: theme('colors.gray.400'),
                 a: {
                     color: theme('colors.green.500'),
                     '&:hover': {
@@ -120,6 +120,10 @@ module.exports = {
           '.blur-xl': {
             backdropFilter: 'blur(100px)'
           },
+          '.stack': {
+            gridColumn: '1',
+            gridRow: '1'
+          }
         }
 
         addUtilities(newUtilities, {

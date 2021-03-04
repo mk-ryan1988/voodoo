@@ -6,6 +6,7 @@
     <div ref="socialBar" :class="!inline ? 'py-4 glass' : 'py-2'" class="flex rounded w-full overflow-hidden md:ml-0 md:mb-0 shadow-2xl lg:transform-none md:shadow-none">
         <ul class="flex flex-grow items-center justify-evenly text-xs">
           <li
+            v-if="$route.name !== 'index'"
             class="mx-4 nav-link"
           >
             <nuxt-link
@@ -22,14 +23,6 @@
             </a>
           </li>
           <li class="mx-4 nav-link">
-              <a href="https://twitter.com/mkryan1988" rel="noopener" target="_blank" class="flex items-center">
-                  <VbaseIcon iconName="twitter" />
-                  <div class="hidden md:block">
-                      <span class="mx-3 font-semibold">Twitter</span>
-                  </div>
-              </a>
-          </li>
-          <li class="mx-4 nav-link">
               <a href="https://github.com/mk-ryan1988" rel="noopener" target="_blank" class="flex items-center"
               >
                   <VbaseIcon iconName="git-hub" />
@@ -42,7 +35,7 @@
               <a @click="toggleTheme" rel="noopener" class="flex items-center cursor-pointer"
               >
                   <VbaseIcon iconName="sun" />
-                  <span class="mx-3 font-semibold hidden md:block">Dark Mode</span>
+                  <span class="mx-3 font-semibold hidden md:block">{{ $darkMode }}} Dark Mode</span>
               </a>
           </li>
         </ul>
@@ -51,10 +44,10 @@
 </template>
 
 <script lang="ts">
-import useTheme from '~/utilities/theme.ts';
+import useTheme from '~/utilities/theme';
 import VbaseIcon from '~/components/VbaseIcon.vue';
 import VdooAvatar from '~/components/VdooAvatar.vue';
-import { defineComponent, onMounted } from '@vue/composition-api';
+import { defineComponent, onMounted, computed, ref  } from '@vue/composition-api';
 
 export default defineComponent({
   name: 'VdooSocialbar' as string,
@@ -71,7 +64,7 @@ export default defineComponent({
   setup(props, context: any) {
     const { setInitialTheme, toggleLocalTheme } = useTheme();
 
-    const toggleTheme = (isDarkMode: boolean) => {
+    const toggleTheme = () => {
       context.root.$darkMode = !context.root.$darkMode;
       let activeTheme = context.root.$darkMode ? 'dark' : 'light';
       toggleLocalTheme(activeTheme);

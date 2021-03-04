@@ -32,21 +32,3 @@ export default defineComponent({
   }
 });
 </script>
-
-<style lang="postcss">
-.pattern-dots-md {
-    @apply overflow-visible text-indigo-700 p-10;
-    max-width: 50% !important;
-    background-image: radial-gradient(currentColor 1px, transparent 1px);
-    background-size: calc(10 * 1px) calc(10 * 1px);
-
-    @screen md {
-      max-width: 20% !important;
-    }
-}
-
-.grid.stack > * {
-    grid-column: 1;
-    grid-row: 1;
-}
-</style>

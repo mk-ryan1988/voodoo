@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  @apply h-screen w-screen bg-gray-100 dark:bg-gray-900 text-gray-500;
+  @apply h-screen w-screen bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-400;
 }
 
 section {

@@ -15,7 +15,7 @@
         I reside in two camps <a class="text-green-600" rel="noopener" href="https://v3.vuejs.org/" target="_blank">Vue.js</a> and <a class="text-blue-600" rel="noopener" href="https://reactjs.org/" target="_blank">React</a>.
         I enjoy the developer experience of the Vue and it's the tool I am the most proficient in. However React has served me well in multiple projects and it's flexibility and large eco system is a big plus.
         <br />
-        For CSS, <a class="text-blue-600" rel="noopener" href="https://tailwindcss.com/" target="_blank">tailwindcss</a> is my go to tool! Utility first css allows you to create any design efficently without bloating the bundle.
+        For CSS, <a class="text-blue-600" rel="noopener" href="https://tailwindcss.com/" target="_blank">tailwindcss</a> is my go to tool! Utility CSS allows you to create any design efficently without shipping excessive CSS.
       </template>
     </VdooDescList>
 
@@ -31,7 +31,7 @@
         For Back-end systems
       </template>
       <template  slot="description">
-        The majorty of my exerience is in PHP and with the <a class="text-red-600" rel="noopener" href="https://laravel.com/" target="_blank">Laravel</a> framework. Without it I would be far less efficent, the framework has so many gems that I would sorely miss if I didnt use it. I have also found <a class="text-yellow-600" rel="noopener" href="https://firebase.google.com/" target="_blank">Firebase</a> a usefull tool in the absence of a traditional back-end.
+        The majorty of my exerience is in PHP and with the <a class="text-red-600" rel="noopener" href="https://laravel.com/" target="_blank">Laravel</a> framework. The framework has so many gems that I would sorely miss if I didnt use it. I have also found <a class="text-yellow-600" rel="noopener" href="https://firebase.google.com/" target="_blank">Firebase</a> a usefull tool in the absence of a traditional back-end and database.
       </template>
     </VdooDescList>
   </div>

@@ -7,7 +7,7 @@
         <div class="flex items-center justify-center">
           <div class="text-center p-4 my-4 md:my-12 md:mt-32">
             <header class="glass p-8">
-              <h1 class="stack text-4xl text-white font-bold mb-2">
+              <h1 class="text-4xl text-white font-bold mb-2">
                   {{ article.title }}
               </h1>
               <div class="text-white">
