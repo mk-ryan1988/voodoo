@@ -1,5 +1,5 @@
 const title = process.env.npm_package_name || "";
-const image = require('@/assets/social-share-img.jpg');
+const image = require('./assets//social-share-img.jpg');
 const description = process.env.npm_package_description || ""
 
 export default {
