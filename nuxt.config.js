@@ -94,6 +94,16 @@ export default {
       short_name: 'mkryan',
       lang: 'en',
       icons: [
+        {
+          "src": "/victory-hand.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        },
+        {
+          "src": "/victory-hand-512.png",
+          "sizes": "512x512",
+          "type": "image/png"
+        },
       ],
     },
   },
