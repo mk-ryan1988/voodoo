@@ -32,10 +32,21 @@
               </a>
           </li>
           <li class="mx-4 nav-link">
+              <a
+                href="mailto:mkryan1988@gmail.com?subject=Contact - website"
+                class="flex items-center"
+              >
+                  <VbaseIcon iconName="paper-airplane" />
+                  <div class="hidden md:block">
+                      <span class="mx-3 font-semibold">Email</span>
+                  </div>
+              </a>
+          </li>
+          <li class="mx-4 nav-link">
               <a @click="toggleTheme" rel="noopener" class="flex items-center cursor-pointer"
               >
                   <VbaseIcon iconName="sun" />
-                  <span class="mx-3 font-semibold hidden md:block">{{ $darkMode }}} Dark Mode</span>
+                  <span class="mx-3 font-semibold hidden md:block">Dark Mode</span>
               </a>
           </li>
         </ul>

@@ -1,7 +1,7 @@
 {
-  "name": "voodoo",
+  "name": "mkryan",
   "version": "1.0.0",
-  "description": "My stylish Nuxt.js playground",
+  "description": "My Nuxt.js playground",
   "author": "Mark Ryan",
   "private": true,
   "scripts": {

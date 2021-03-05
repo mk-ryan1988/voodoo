@@ -1,23 +1,75 @@
+const title = process.env.npm_package_name || "";
+const image = require('@/assets/social-share-img.jpg');
+const description = process.env.npm_package_description || ""
+
 export default {
   target: 'static',
   /*
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || "",
+    title: title,
     meta: [
       { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      {
+        name: "viewport",
+        content: "width=device-width, initial-scale=1"
+      },
       {
         hid: "description",
         name: "description",
-        content: process.env.npm_package_description || ""
+        content: description
+      },
+      {
+        hid: 'twitter:title',
+        name: 'twitter:title',
+        content: title
+      },
+      {
+        hid: 'twitter:description',
+        name: 'twitter:description',
+        content: description
+      },
+      {
+        hid: 'twitter:image',
+        name: 'twitter:image',
+        content: image
+      },
+      {
+        hid: 'twitter:image:alt',
+        name: 'twitter:image:alt',
+        content: title
+      },
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: title
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: description
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: image
+      },
+      {
+        hid: 'og:image:secure_url',
+        property: 'og:image:secure_url',
+        content: image
+      },
+      {
+        hid: 'og:image:alt',
+        property: 'og:image:alt',
+        content: title
       }
     ],
     link: [
       {
         rel: "canonical",
-        href: "https://voodoo-developer.co.uk"
+        href: "https://mkryan.dev"
       },
       {
         rel: "icon",
@@ -38,17 +90,17 @@ export default {
   },
   pwa: {
     manifest: {
-      name: 'Voodoo Developer',
-      short_name: 'Voodoo',
+      name: 'Mark Ryan',
+      short_name: 'mkryan',
       lang: 'en',
       icons: [
         {
-          "src": "/man-mage.png",
+          "src": "data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✌</text></svg>",
           "sizes": "192x192",
           "type": "image/png"
         },
         {
-          "src": "/man-mage-512.png",
+          "src": "data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✌</text></svg>",
           "sizes": "512x512",
           "type": "image/png"
         },
