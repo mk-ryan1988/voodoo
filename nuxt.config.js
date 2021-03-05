@@ -90,7 +90,7 @@ export default {
   },
   pwa: {
     manifest: {
-      name: 'Mark Ryan',
+      name: 'Hey Mark',
       short_name: 'mkryan',
       lang: 'en',
       icons: [
