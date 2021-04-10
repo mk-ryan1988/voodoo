@@ -1,5 +1,5 @@
 const title = process.env.npm_package_name || "";
-const image = '/social-share-img.jpg';
+const image = 'https://res.cloudinary.com/mkryan/image/upload/c_thumb,g_face,w_200/v1618097309/Voodoo/social-meta-img_pa5ynu.png';
 const description = process.env.npm_package_description || "";
 
 export default {
