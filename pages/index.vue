@@ -17,7 +17,7 @@
 
       <VdooBlogCard
         label="Freelance"
-        :thumbnail="require('~/assets/projects/fresh-start.png')"
+        thumbnail="https://res.cloudinary.com/mkryan/image/upload/v1618096790/Voodoo/fresh-start_ds9dml.png"
       >
         <template slot="heading">
           Fresh Start <span class="text-base font-md">with</span> Leaner-Living
