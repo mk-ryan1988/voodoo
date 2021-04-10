@@ -1,5 +1,5 @@
 const title = process.env.npm_package_name || "";
-const image = 'https://res.cloudinary.com/mkryan/image/upload/c_thumb,w_200,g_face/v1618097999/Voodoo/Hey_Mark_-_Aboutt_udmmko.jpg';
+const image = 'https://res.cloudinary.com/mkryan/image/upload/v1618097999/Voodoo/Hey_Mark_-_Aboutt_udmmko.jpg';
 const description = process.env.npm_package_description || "";
 
 export default {
