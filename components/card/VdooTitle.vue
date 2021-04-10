@@ -21,14 +21,14 @@ export default {
         return ['top', 'left', 'bottom', 'right', 'middle'].indexOf(value) !== -1
       }
     },
-    bigSur: {
+    meshBg: {
       type: Boolean,
       default: false
     },
   },
   computed: {
     computedBg() {
-      return this.bigSur ? 'big-sur' : ''
+      return this.meshBg ? 'meshBg' : ''
     },
     computedRadius() {
       switch (this.origin) {
@@ -51,18 +51,14 @@ export default {
 </script>
 
 <style scoped>
-  .big-sur {
-    background-image: url('~assets/blogs/big-sur.jpg');
+  .meshBg {
+    background-image: url('https://res.cloudinary.com/mkryan/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1618095021/Voodoo/Royal-Heath-mesh_waxacm.jpg');
     background-size: cover;
+    background-position: bottom;
   }
-  .gradient {
-    /* maybe */
-    /* background-image: linear-gradient(125deg, #3d3393 0%, #2b76b9 37%, #2cacd1 65%, #35eb93 100%); */
-
-    /* pinky */
-    /* background-image: linear-gradient(43deg, #3323F4 0%, #C850C0 46%); */
-
-    /* Stephs */
-    /* background-image: linear-gradient(to right, #243949 0%, #517fa4 100%); */
+  .dark .meshBg {
+    background-image: url('https://res.cloudinary.com/mkryan/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1618094504/Voodoo/Pale-Cornflower-Bluejpg_qeqtrt.jpg');
+    background-size: cover;
+    background-position: bottom;;
   }
 </style>

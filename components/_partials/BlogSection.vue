@@ -6,11 +6,8 @@
       class="mb-6"
       label="blog"
       truncate
+      :thumbnail="post.thumbnail"
     >
-      <!-- <template v-if="post.thumbnail" slot="image">
-        <img
-        :src="require(`~/assets/blogs/${post.thumbnail}`)" alt="">
-      </template> -->
       <template slot="heading">
         {{post.title}}
       </template>

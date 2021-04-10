@@ -47,6 +47,9 @@ module.exports = {
                         color: theme('colors.blue.700'),
                     },
                 },
+                blockquote: {
+                  color: theme('colors.gray.900'),
+                },
             },
         },
 
@@ -58,6 +61,9 @@ module.exports = {
                     '&:hover': {
                         color: theme('colors.green.500'),
                     },
+                },
+                blockquote: {
+                  color: theme('colors.gray.300'),
                 },
 
                 h1: {

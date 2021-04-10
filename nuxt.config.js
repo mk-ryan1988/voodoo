@@ -138,7 +138,8 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     "@nuxtjs/pwa",
     "@nuxtjs/svg",
-    '@nuxt/content'
+    '@nuxt/content',
+    '@nuxtjs/cloudinary',
   ],
   /*
    ** Axios module configuration
@@ -167,5 +168,9 @@ export default {
         theme: 'prism-themes/themes/prism-material-light.css'
       }
     }
-  }
+  },
+  cloudinary: {
+    cloudName: 'mkryan',
+    privateCDN: false,
+  },
 };

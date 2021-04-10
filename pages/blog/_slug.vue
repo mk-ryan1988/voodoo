@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col justify-between m-auto min-h-full">
       <VdooTitle
-        bigSur
+        meshBg
         origin="top"
       >
         <div class="flex items-center justify-center">
