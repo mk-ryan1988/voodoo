@@ -25,6 +25,7 @@
     "prism-themes": "^1.4.0"
   },
   "devDependencies": {
+    "@nuxtjs/web-vitals": "^0.1.4",
     "autoprefixer": "^9",
     "postcss": "^7",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat"
