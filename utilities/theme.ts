@@ -3,27 +3,11 @@ export const useTheme = () => {
       light = 'light',
       dark = 'dark',
   }
-
-  const getInitialColorMode = () : string => {
-    const persistedColorPreference = window.localStorage.getItem('color-theme');
-    if (typeof persistedColorPreference === 'string') {
-      return persistedColorPreference;
-    }
-
-    const mql = window.matchMedia('(prefers-color-scheme: dark)');
-    const hasMediaQueryPreference = typeof mql.matches === 'boolean';
-    if (hasMediaQueryPreference) {
-      return mql.matches ? 'dark' : 'light';
-    }
-
-    return 'light';
-  }
-
   const setInitialTheme = () => {
     if (process.browser && document) {
       let body = document.querySelector('html');
 
-      if (getInitialColorMode() === 'dark') {
+      if (localStorage.color_theme === 'dark' || (!('color_theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         if (body) {
           body.classList.add('dark');
         }
