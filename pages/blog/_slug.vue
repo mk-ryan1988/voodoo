@@ -3,6 +3,7 @@
       <VdooTitle
         meshBg
         origin="top"
+        class="px-4"
       >
         <div class="flex items-center justify-center">
           <div class="text-center p-4 my-4 md:my-12 md:mt-32">

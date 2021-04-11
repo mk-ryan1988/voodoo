@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col items-center overflow-x-hidden w-screen min-h-screen">
     <VdooNavbar />
-    <main class="flex-grow w-full px-4 sm:px-6 xl:max-w-4xl xl:px-0">
+    <main class="flex-grow w-full px-6 sm:px-6 xl:max-w-4xl xl:px-0">
       <nuxt/>
     </main>
 
