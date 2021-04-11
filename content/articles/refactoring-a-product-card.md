@@ -25,11 +25,11 @@ Ok, so we can do better than that. Overall the design just a bit messy causing t
 
 ## 1 . Improved visual flow and hierachy
 
-The main takeaway here is grouping the different types of content. Before there were 5 visual columns and all of the information and actions are sporadically placed across the card, now there are just 3. One containing all the content that helps the users to make a informed choice. And another which contains all the actions, how the user customises and makes a purchase.
+The main takeaway here is grouping the different types of content. Before there were 5 visual columns and all of the information and actions were sporadically placed across the card, now however, there are just 3. One containing all the content that helps the users to make a informed choice. And another which contains all the actions, how the user customises and makes a purchase.
 
 ## 2. Better Button UX
 
-Along with grouping the actions I have made an improvement to how a user amends the quantiy they wish to purchase.
+Along with grouping the actions I have made an improvement to how a user amends the quantity they wish to purchase.
 
 Before there was a `select` element that had a long list of numbers from 1 - 99. This was both unnecessary and caused multiple clicks when the common trend was that only one was need, because most users only incremented the quantity by 1. So now the updated input allows the user to increment as well manually input the quantity the wish, much nicer!
 
