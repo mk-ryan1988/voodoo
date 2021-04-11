@@ -13,7 +13,7 @@
       <VdooSubtitle>
         {{ label }}
       </VdooSubtitle>
-      <div class="text-lg leading-6 font-medium mt-1 text-gray-900 dark:text-white">
+      <div class="text-lg leading-6 font-medium mt-1 mb-3 md:mb-0 text-gray-900 dark:text-white">
         <slot name="heading" />
       </div>
     </div>
