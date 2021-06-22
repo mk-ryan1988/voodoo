@@ -1,6 +1,7 @@
 ---
 title: Refactoring a product card
 description: I refactor a product card. Take a look at some UI refactoring and see how small improvements can make a big difference.
+label: Blog
 date: 10th April 2020
 length: 5 min read
 thumbnail: https://res.cloudinary.com/mkryan/image/upload/b_rgb:f1f3f7,c_thumb,w_400/v1618092340/Voodoo/htx-product-after_ubcnat.png

@@ -4,7 +4,7 @@
       v-for="post in articles"
       :key="post.slug"
       class="mb-6"
-      label="blog"
+      :label="post.label"
       truncate
       :thumbnail="post.thumbnail"
     >

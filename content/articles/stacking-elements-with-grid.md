@@ -1,6 +1,7 @@
 ---
 title: Stacking Elements with Grid
 description: I'll quickly show you how to stack html elements using CSS Grid.
+label: Blog
 date: 3rd March 2020
 length: 3 min read
 thumbnail: null
