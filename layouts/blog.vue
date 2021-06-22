@@ -28,7 +28,7 @@ import VdooSocialbar from '~/components/navigation/VdooSocialbar.vue';
 import VbaseIcon from '~/components/VbaseIcon.vue';
 
 export default defineComponent({
-  name: 'blog' as string,
+  name: 'BlogLayout' as string,
   components: {
     VdooNavbar,
     VdooSocialbar,

@@ -42,6 +42,38 @@ export default {
       name: 'slide-fade',
       mode: 'out-in',
     },
+    head() {
+      return {
+        title: 'Hey Mark - ' + this.article.title,
+        meta: [
+            {
+                hid: 'description',
+                name: 'description',
+                content: this.article.description,
+            },
+            {
+                hid: 'og:title',
+                name: 'og:title',
+                content: this.article.title,
+            },
+            {
+                hid: 'og:description',
+                property: 'og:description',
+                content: this.article.description,
+            },
+            {
+                hid: 'og:url',
+                property: 'og:url',
+                content: `https://mkryan.dev/blog/${this.article.slug}`,
+            },
+            ...(this.article.thumbnail ? [{
+                hid: 'og:image',
+                property: 'og:image',
+                content: this.article.thumbnail,
+            }] : []),
+        ],
+      }
+    },
     components: {
       VdooBlogNav,
       VdooTitle,
@@ -61,12 +93,9 @@ export default {
         next
       }
     },
-    head () {
+    data() {
       return {
-        title: 'Hey Mark - ' + this.article.title,
-        meta: [
-          { hid: 'blog', name: this.article.title, content: this.article.description }
-        ]
+        article: null,
       }
     },
 }

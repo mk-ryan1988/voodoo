@@ -106,7 +106,7 @@ export default defineComponent({
 
 <style lang="postcss" scoped>
   .nav-link {
-    @apply text-gray-700 hover:text-black dark:text-gray-300 dark:hover:text-white;
+    @apply text-gray-700 hover:text-black dark:text-gray-200 dark:hover:text-white;
   }
   .translate-y-nav {
     transform: translateY(calc(100% + 0.75rem));
